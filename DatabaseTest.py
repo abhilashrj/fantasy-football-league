@@ -8,10 +8,11 @@ conn=sqlite3.connect("fantasy.sqlite3")
 cur=conn.cursor()
 cur.execute("DROP TABLE FantasyLeague"	)
 cur.execute("CREATE TABLE FantasyLeague (id INTEGER PRIMARY KEY NOT NULL,caption TEXT,league TEXT,year INTEGER,numberOfTeams INTEGER,numberOfGames INTEGER,lastUpdated TEXT)")
+soccer_League_prefix = '/alpha/soccerseasons/'
 
 connection = http.client.HTTPConnection('api.football-data.org')
 headers = { 'X-Auth-Token': APIKEY }
-connection.request('GET', '/alpha/soccerseasons', None, headers )
+connection.request('GET', soccer_League_prefix, None, headers )
 response = json.loads(connection.getresponse().read().decode())
 
 for row in response:
@@ -20,11 +21,11 @@ for row in response:
     del tup
 conn.commit()
 
-cur = conn.cursor()    
-cur.execute("SELECT * FROM FantasyLeague")
-rows = cur.fetchall()
+  
+#cur.execute("SELECT * FROM FantasyLeague")
+#rows = cur.fetchall()
 
-for row in rows:
-    print (row)
+#for row in rows:
+#    print (row)
 
 cur.close()
