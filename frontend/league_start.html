@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Create New League - Fantasy Football</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link href="http://d1h60c43tcq0zx.cloudfront.net/static/css/versioned/global-647cd5e13b0ce4027ac2afe2eb203ab2.css" type="text/css" rel="stylesheet" />
+      <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+
+   </head>
+   <body class="with-top-bar long-brand nfl">
+      <nav class="navbar navbar-default" role="navigation">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-toggleable"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+         </div>
+         <div id="nav-toggleable" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+               <li class="dropdown toggle" id="R290GN0">
+                  <a href="/settings" class="dropdown-toggle" data-target="#" data-toggle="dropdown"><i class="fa fa-cog" title="akaysh Account Settings"></i> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                     <li id="TVR57P8"><a href="/notifications">Notifications</a></li>
+                     <li id="CQVQ178"><a href="/settings">Account Settings</a></li>
+                     <li id="C8S0K40"><a href="/nfl/leagues/new?toggleSlate=true">Dark Theme</a></li>
+                     <li id="K23RT3O"><a href="/nfl/logout">Sign Out</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown toggle" id="2R7467O">
+                  <a href="/help" class="dropdown-toggle" data-target="#" data-toggle="dropdown"><i class="fa fa-question-circle"></i> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                     <li id="OTKPRG0"><a href="/help">Owner's Manual</a></li>
+                     <li id="CSA3HSG"><a href="/forums/help">Support Forum</a></li>
+                     <li id="5LIUJOG"><a href="/nfl/contact">Contact Us</a></li>
+                     <li id="K8VK7K8"><a href="/nfl/forums">Forums</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <div id="body">
+         <div id="top-bar-container">
+            <div id="top-bar">
+               <ul class="breadcrumb pull-left">
+                  <li><a href="/nfl">My Leagues</a>
+                  <li class="active">Create New League</li>
+               </ul>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <div id="alerts-container"></div>
+            <div class="row">
+               <div id="body-main" class="col-md-6 col-md-offset-3 col-xs-12">
+                  <div id="main-container">
+                     <div class="clearfix"></div>
+                     <div id="body-center-main">
+                        <form action="/nfl/leagues/new" method="post" class="form-vertical">
+                           <div class="panel panel-default">
+                              <div class="panel-body">
+                                 <div id="join-image"></div>
+                                 <fieldset>
+                                    <div class="form-group">
+                                       <label for="leagueName.value" class="control-label ">League Name</label>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-8"><input type="text" name="leagueName.value" id="leagueName.value" class="form-control" /></div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label class="control-label ">Eligibility</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>Restrict access to your league by requiring all joining teams to know a password.</p>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6">
+                                             <div class="radio"><label><input type="radio" name="public" value="true" checked="checked" /> Public</label></div>
+                                             <div class="radio"><label><input type="radio" name="public" value="false" /> Private</label></div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label for="password" class="control-label ">League Password</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>Restrict access to your league by requiring all joining teams to know a password.</p>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6"><input type="text" name="password" id="password" class="form-control" /></div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label for="numTeams" class="control-label "># Teams</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>Leagues that don't fill up can still play.</p>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-4">
+                                             <select name="numTeams" id="numTeams" class="form-control">
+                                                <option value="8">8</option>
+                                                <option value="10">10</option>
+                                                <option value="12" selected="selected">12</option>
+                                                <option value="14">14</option>
+                                                <option value="16">16</option>
+                                                <option value="18">18</option>
+                                                <option value="20">20</option>
+                                                <option value="22">22</option>
+                                                <option value="24">24</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label for="numDivisions" class="control-label "># Divisions</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>Break your league up into smaller divisions.</p>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-4">
+                                             <select name="numDivisions" id="numDivisions" class="form-control">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3" selected="selected">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                             </select>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="control-label ">Type</label>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6">
+                                             <div class="radio"><label><input type="radio" name="scoringSystem" value="FP_H2H" checked="checked" /> <span class="tt-content" id="ttId0_0">H2H Points</span></label></div>
+                                             <div class="radio"><label><input type="radio" name="scoringSystem" value="FP_TOTAL" /> <span class="tt-content" id="ttId1_0">Total points</span></label></div>
+                                             <div class="radio"><label><input type="radio" name="scoringSystem" value="ROTO_TOTAL" /> <span class="tt-content" id="ttId2_0">Roto</span></label></div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label class="control-label ">Lifetime</label>
+                                       <p class="popover right help-block"><span class="arrow"></span><strong>Redraft</strong> leagues start over every season. <strong>Keeper</strong> leagues allow each team to hold on to some players for the next season.</p>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6">
+                                             <div class="radio"><label><input type="radio" name="keeper" value="true" /> Keeper</label></div>
+                                             <div class="radio"><label><input type="radio" name="keeper" value="false" checked="checked" /> Redraft</label></div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </fieldset>
+                              </div>
+                              <div class="form-actions panel-footer"><button type="submit" class="btn btn-primary">Create League</button><a class="btn btn-link" href="/nfl">Cancel</a></div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container-fluid">
+         <div id="footer">
+            <div class="row">
+               <hr />
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <ul class="list-inline pull-left">
+                     <li><a href="/about">About</a></li>
+                     <li><a href="/terms">Terms</a></li>
+                     <li><a href="/privacy">Privacy</a></li>
+                     <li><a href="/contact">Contact/Report a bug</a></li>
+                     <li><a href="/help">Help</a></li>
+                  </ul>
+                  <ul class="list-inline pull-right">
+                     <li><a href="/copyright">&copy; 2015</a> Fleaflicker LLC.</li>
+                     <li><a href="http://twitter.com/fleaflicker"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="http://www.facebook.com/Fleaflicker"><i class="fa fa-facebook"></i></a></li>
+                     <li><em class="text-muted" title="Tue 10/27/15 4:35 PM">v15.3.60</em></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" id="page-data">window.pageData = {"analyticsDimensions":[{"dimension1":"user"}],"divisionSizes":{"8":[1,2],"10":[1,2],"12":[1,2,3,4],"14":[1,2],"16":[1,2,4],"18":[1,2,3,6],"20":[1,2,4,5],"22":[1,2],"24":[1,2,3,4,6,8]},"toggles":{"public":{"true":[{"param":"password","show":false}]}},"tooltips":[{"contents":"No matchups, most total points scored during the season wins.","ids":["ttId1_0"]},{"contents":"Weekly head-to-head matchups, most points wins the matchup.","ids":["ttId0_0"]},{"contents":"No matchups, teams are ranked in each roto category, team with best ranking wins.","ids":["ttId2_0"]}]};</script><script type="text/javascript" src="http://d1h60c43tcq0zx.cloudfront.net/static/js/versioned/global-1276ccf54e109d4bbcb7c66a52d16778.js"></script><script type="text/javascript" id="inline-scripts">var onNumTeamsChanged=function(e){e=$(this).closest("form").find("[name\x3dnumDivisions]");var b=$(this).val(),g=e.val(),b=FF.Main.initialJson().divisionSizes[b];e.find("option").remove();for(var q=b[2<b.length?b.length-2:b.length-1],l=0;l<b.length;l++)e.append('\x3coption value\x3d"'+b[l]+'"\x3e'+b[l]+"\x3c/option\x3e"),b[l]==g&&(q=b[l]);e.val(q)};$("form [name\x3dnumTeams]").change(onNumTeamsChanged).change();</script>
+   </body>
+</html>
+<!--response=0:00:00.004; action=0:00:00.003; render=0:00:00.001; host=ip-172-30-2-183; version=15.3.60; build=2015-10-27 16:36-->
+
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=710829082377875&amp;ev=PixelInitialized" /></noscript>
+</div></div></div></div></div></div>
+<div class="container-fluid">
+   <div id="footer">
+      <div class="row">
+         <hr />
+      </div>
+      
+   </div>
+</div>
+<script type="text/javascript" src="http://d1h60c43tcq0zx.cloudfront.net/static/js/versioned/global-1276ccf54e109d4bbcb7c66a52d16778.js"></script><script type="text/javascript" src="http://d1h60c43tcq0zx.cloudfront.net/static/js/versioned/carousel-4f34ee68d3aeb3e868adcac6f2b4a0e3.js"></script><script type="text/javascript" id="inline-scripts">$("#screenshots-carousel").carousel({interval:3E3}).carousel("cycle");</script></body></html>
