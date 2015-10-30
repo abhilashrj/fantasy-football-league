@@ -7,7 +7,17 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link href="http://d1h60c43tcq0zx.cloudfront.net/static/css/versioned/global-647cd5e13b0ce4027ac2afe2eb203ab2.css" type="text/css" rel="stylesheet" />
       <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-
+      <script>
+                                          function checkPassword()
+                                          {
+                                                if(document.getElementById("password").value!=document.getElementById("passwordAgain").value)
+                                                {
+                                                  alert('PASSWORDS DONT MATCH! O.o');
+                                                }
+                                                else alert('wohoo');
+                                             }
+                                          
+                                         </script> 
    </head>
    <body class="with-top-bar long-brand nfl with-tabs">
       <nav class="navbar navbar-default" role="navigation">
@@ -36,21 +46,21 @@
                <div id="body-main" class="col-md-6 col-md-offset-3 col-xs-12">
                   <div id="main-container">
                      <ul class="nav nav-pills">
-                        <li id="ICAFDQO"><a href="/nfl/login">Log In</a></li>
-                        <li class="active" id="24N6R98"><a href="/nfl/signup">Create New Account</a></li>
+                        <li id="ICAFDQO"><a href="login.html">Log In</a></li>
+                        <li class="active" id="24N6R98"><a href="signup.html">Create New Account</a></li>
                      </ul>
                      <div id="body-center-main">
-                        <form action="/nfl/signup" method="post" class="form-vertical">
+                        <form action="signup.php" method="post" class="form-vertical">
                            <input type="hidden" id="forwardTo" name="forwardTo" value="" />
                            <div class="panel panel-default">
                               <div class="panel-body">
                                  <div class="hidden-xs" id="signup-image"></div>
                                  <fieldset>
                                     <div class="form-group with-help">
-                                       <label for="email" class="control-label ">Email</label>
-                                       <p class="popover right help-block"><span class="arrow"></span>Your email address. We <em>never</em> send you unwanted email messages.</p>
+                                       <label for="email" class="control-label ">User Name</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>Your User Name address.
                                        <div class="form-controls row">
-                                          <div class="col-sm-6"><input type="text" name="email" id="email" class="form-control" /></div>
+                                          <div class="col-sm-6"><input type="text" name="username" id="email" class="form-control" /></div>
                                        </div>
                                     </div>
                                     <div class="form-group with-help">
@@ -64,27 +74,27 @@
                                        <label for="passwordAgain" class="control-label ">Re-Type Password</label>
                                        <p class="popover right help-block"><span class="arrow"></span>To prevent typos.</p>
                                        <div class="form-controls row">
-                                          <div class="col-sm-6"><input type="password" name="passwordAgain" id="passwordAgain" class="form-control" /></div>
+                                          <div class="col-sm-6"><input type="password" name="passwordAgain" id="passwordAgain" class="form-control" 
+                                          onfocusout="checkPassword()"/>
+                                          
+
+                                          
+                                          
                                        </div>
                                     </div>
                                     <div class="form-group with-help">
                                        <label for="userName" class="control-label ">Display Name</label>
-                                       <p class="popover right help-block"><span class="arrow"></span>To identify you to other Fleaflicker users.</p>
+                                       
                                        <div class="form-controls row">
                                           <div class="col-sm-6"><input type="text" name="userName" id="userName" class="form-control" /></div>
                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                       <div class="form-controls row">
-                                          <div class="col-sm-6">
-                                             <div class="checkbox"><label><input type="checkbox" name="keepMe" value="true" checked="checked" /> Keep me signed in</label></div>
-                                          </div>
-                                       </div>
-                                    </div>
+                                    
                                  </fieldset>
                               </div>
                               <div class="form-actions panel-footer">
-                                 <button type="submit" class="btn btn-success">Start Playing!</button><a class="btn btn-link" href="/nfl/login">Already a member? Sign in</a>
+                                 <button name="signup" type="submit" class="btn btn-success">Start Playing!</button><a class="btn btn-link" href="login.html">
+                                 Already a member? Sign in</a>
                                  
                               </div>
                            </div>
