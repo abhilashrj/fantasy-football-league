@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head></head>
+<body>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<button onclick="sendTeam()">Send DATA</button>
+
+<script type="text/javascript">
+function sendTeam()
+{
+        window.alert("INSIDE");
+        $.post("submit.php",
+        {
+          Username:"Louda",
+          Striker1:7657,
+          Striker2:6764,
+          Mid1:6764,
+          Mid2:6764,
+          Mid3:6764,
+          Mid4:6764,
+          Def1:6764,
+          Def2:6764,
+          Def3:6764,
+          Def4:6764,
+          Goalkeeper:6764,
+          Striker_sub:6764,
+          Mid_sub:6764,
+          Def_sub:6764,
+          Goalkeeper_sub:6764,
+          Star_1:6764,
+          Star_2:6764,
+          Star_3:6764
+        });
+
+        window.alert("DATA SENT");
+};
+</script>
+</body>
+</html>

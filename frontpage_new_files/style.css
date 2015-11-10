@@ -1,0 +1,6363 @@
+/**
+ * HTML5 ✰ Boilerplate
+ *
+ * style.css contains a reset, font normalization and some base styles.
+ *
+ * Credit is left where credit is due.
+ * Much inspiration was taken from these projects:
+ * - yui.yahooapis.com/2.8.1/build/base/base.css
+ * - camendesign.com/design/
+ * - praegnanz.de/weblog/htmlcssjs-kickstart
+ */
+
+
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+
+/**
+ * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
+ */
+
+body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+select, input, textarea, button { font:99% sans-serif; }
+
+/* Normalize monospace sizing:
+   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+
+/**
+ * Minimal base styles.
+ */
+
+/* Always force a scrollbar in non-IE */
+html { overflow-y: scroll; }
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+#ism ul, #ism ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+td { vertical-align: top; }
+
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre {
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+  padding: 15px;
+}
+
+textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+
+.ie6 legend, .ie7 legend { margin-left: -7px; }
+
+/* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* Colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid {
+   border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+/* These selection declarations have to be separate
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink! */
+/*::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }*/
+
+/* j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+/* Make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+
+/* Bicubic resizing for non-native sized IMG:
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/**
+ * You might tweak these..
+ */
+
+body, select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #444;
+  /* Set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */
+}
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+/**
+ * Primary styles
+ *
+ * Author: ISM Fantasy Games Ltd
+ */
+
+ /**
+ * Colours
+ *
+ * Game heading blue: #162b48
+ * Mid blue: #639ec8
+ *
+ *
+ */
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+/* Headings
+   ========================================================================== */
+
+/*
+ * Standard abstract font-sizes.
+ * So we keep it DRY and don't keep defining font-size
+ * Props to Nicole Sullivan, Jeremy Keith, Andy Hume and Harry Robers
+ * http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/
+ * http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+ * https://speakerdeck.com/u/andyhume/p/css-for-grown-ups-maturing-best-practises?slide=40
+ */
+
+/* Set our font sizes. Keep these abstract. DON'T add additional properties! */
+.ism .ism-alpha   { font-size: 20px; }
+.ism .ism-beta    { font-size: 18px; }
+.ism .ism-gamma   { font-size: 16px; }
+.ism .ism-delta   { font-size: 14px; }
+.ism .ism-epsilon { font-size: 12px; }
+.ism .ism-zeta    { font-size: 10px; }
+
+/*
+ * Non-standard font-sizes.
+ * For when a h1 just ain't big enough!
+ * http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+ */
+
+/*.ism .ism-giga {} */
+.ism .ism-mega { font-size: 40px; }
+.ism .ism-kilo { font-size: 30px; }
+
+/* Smaller-than-body-copy sizes here. */
+.ism .ism-milli { font-size: 10px; }
+
+/* Add this class to any element that you want to use the PL font */
+.ism .ism-pl-font {
+    font-family: PremierLeagueRegular,'Lucida Grande','Lucida Sans Unicode';
+}
+
+/* PL game heading */
+.ism .ism-h-game {
+    background: url(../img/bpl-logo.png) no-repeat right center;
+    padding: 10px 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #162b48;
+}
+
+/* FPL header */
+
+/* Sub-heading */
+.ism .ism-game-header__sub-heading {
+    display: inline-block;
+    padding: 15px 0 9px;
+    color: #808080;
+}
+
+/* Game sponsor logo */
+.ism .ism-game-header__game-sponsor {
+    vertical-align: bottom;
+}
+
+/* Games nav */
+.ism .ism-games-header {
+    margin-top: 33px;
+}
+
+.ism .ism-games-nav {
+    width: 470px;
+    margin-bottom: 1px;
+    margin-right: 10px;
+    float: left;
+}
+
+.ism .ism-games-nav__item {
+    list-style-type: none;
+    float: left;
+    min-width: 235px;
+}
+
+.ism .ism-games-nav__text {
+    display: block;
+    padding: 14px 10px 13px;
+    font-family: PremierLeagueRegular,'Lucida Grande','Lucida Sans Unicode';
+    font-size: 18px;
+    line-height: 1;
+}
+
+.ism .ism-games-nav__heading {
+    color: #050528;
+    background-image: url('../img/games-nav-active.png');
+    font-weight: normal;
+}
+
+.ism .ism-games-nav__link,
+.ism .ism-games-nav__link:hover,
+.ism .ism-games-nav__link:active,
+.ism .ism-games-nav__link:visited {
+    margin-left: 1px;
+    background-image: url('../img/games-nav-plu.png');
+    color: white;
+    text-decoration: none;
+}
+
+.ism .ism-games-nav__new {
+    margin-right: 4px;
+    padding: 3px 6px;
+    background-color: #dd0c39;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    float: right;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.ism .ism-partner {
+    float: left;
+}
+
+.ism .ism-partner__text {
+    display: inline-block;
+    padding: 15px 0;
+    color: #808080;
+    font-family: PremierLeagueRegular,'Lucida Grande','Lucida Sans Unicode';
+}
+
+.ism .ism-partner__logo {
+    padding: 3px 0;
+    vertical-align: bottom;
+}
+
+.ism .ism-game-header__comp-sponsor {
+    float: right;
+    margin-top: 7px;
+}
+
+/* ================== */
+/* = basic elements = */
+/* ================== */
+
+/* Bannerad */
+.banner {
+    background: #ddd;
+}
+.bannerad {
+    height: 92px;
+    width: 728px;
+    padding: 10px 0px 10px 113px;
+    margin: 0 auto;
+}
+
+/* Wrapper for main content */
+.ismWrapper {
+    overflow: auto;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.ism .ismSponsorLogo {
+    float: right;
+    margin: 15px 0;
+}
+
+/* Game nav */
+
+
+/* Padding for page content */
+.ismContent {
+    background: #fff;
+    padding-top: 30px;
+    z-index: 1;
+}
+
+/* ISM page content */
+#ism {
+    float: left;
+    width: 750px;
+    -webkit-text-size-adjust: 100%;
+}
+
+#ism .ismPrimaryWide,
+#ism .ismPrimaryNarrow,
+#ism .ismSecondary {
+    padding-left: 30px;
+}
+
+#ism .ismPrimaryWide {
+    float: left;
+    width: 710px;
+}
+#ism .ismPrimaryNarrow {
+    float: left;
+    width: 490px;
+    z-index: 2;
+}
+
+#ism .ismSecondary {
+    float: left;
+    width: 200px;
+}
+.ie7 #ism .ismSecondary {
+    margin-right: 1px;
+}
+
+.ismAside {
+    float: right;
+    padding-right: 30px;
+}
+
+.ismAside .ismSkyscraperAd {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#ism .skyscraper {
+    padding: 0;
+    width: auto;
+}
+
+/* PL sidebar page content */
+
+/* Fix their bad css that places a 130px wide table in a 120px container */
+.include .leaguetablesidebar {
+    width: 130px;
+}
+
+.ism-lang__label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ism-lang__select {
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+/* Layout */
+.ism,
+#ism {
+    font-family: Arial,helvetica,sans-serif;
+}
+
+.ie7 .ism {
+    position: relative;
+    z-index: 1;
+}
+
+.no-js #ism {
+    position: relative; /*for no JS message*/
+}
+
+.ism #header #masthead .utils .logo {
+    z-index: 500;
+}
+.ie7 #ism #header #masthead .fixtures-container {
+    z-index: 100;
+}
+.ie7 #ism #header #masthead .utils .logo {
+    z-index: 2000;
+}
+#body .content {
+    background: transparent;
+}
+
+.ie7 #ism header {
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+}
+
+/* headings */
+.ism h2,
+.ism h3,
+#ism h1,
+#ism h2,
+#ism h3,
+#ism h4,
+#ism h5,
+#ism h6,
+#ism .ismH1,
+.ism .ismH2,
+#ism .ismH2,
+#ism .ismH3,
+#ism .ismH4,
+#ism .ismH5,
+#ism .ismH6 {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#ism h1 {
+    color: #639ec8;
+    font-size: 123.1%;
+}
+
+#ism hgroup {
+    padding: 0;
+}
+
+#ism hgroup h1 {
+    border-bottom: 1px dotted #050528;
+    font-size: 138.5%;
+    margin: 0 0 10px;
+    padding: 0 0 10px;
+}
+
+
+#ism .ismSection1 {
+    margin: 0 0 10px;
+}
+
+#ism .ismSection2 {
+    border-bottom: 1px dotted #050528;
+    color: #639ec8;
+    font-size: 107.7%;
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+}
+
+#ism .ismSection3 {
+    border-bottom: 1px dotted #050528;
+    color: #639ec8;
+    font-size: 123.1%;
+    padding: 0 0 10px;
+}
+
+.ism h2,
+.ism .ismH2,
+#ism h2,
+#ism .ismH2 {
+    background: transparent;
+    color: #639ec8;
+    font-size: 14px;
+    padding: 0 0 10px;
+    border-bottom: 1px dotted #666;
+    margin: 10px 0;
+}
+#ism h2 a {
+    color: #639ec8;
+}
+.ism h3,
+.ism .ismH3,
+#ism h3,
+#ism .ismH3 {
+    color: #639ec8;
+    font-size: 13px;
+    border-bottom: none;
+    padding: 0;
+}
+
+#ism p,
+#ism a,
+.ism ul,
+#ism ul,
+.ism ol,
+#ism ol,
+.ism dl,
+#ism dl,
+.ism table,
+#ism table {
+    color: #666;
+    font-size: 13px;
+}
+
+#ism .ismSecondary p,
+#ism .ismSecondary a,
+#ism .ismSecondary ul,
+#ism .ismSecondary ol,
+#ism .ismSecondary dl,
+#ism .ismSecondary table {
+    font-size: 11px;
+}
+
+.ism p,
+#ism p {
+    margin: 0 0 15px;
+    padding: 0;
+}
+
+#ism a {
+    color: #050528;
+    text-decoration: none;
+}
+
+#ism a:hover {
+    text-decoration: underline;
+}
+
+.ism em,
+#ism em {
+    font-style: italic;
+}
+
+/* lists */
+#ism ul,
+#ism ol {
+    list-style-type: none;
+    margin: 0;
+}
+
+.ism .ismList li,
+#ism .ismList li {
+    margin: 0 0 10px;
+}
+
+.ism .ismBulletList,
+#ism .ismBulletList {
+    list-style-type: disc;
+}
+
+.ism .ismNumList,
+#ism .ismNumList {
+    list-style-type: decimal;
+}
+
+.ism .ismBulletList,
+.ism .ismNumList,
+#ism .ismBulletList,
+#ism .ismNumList {
+    padding: 0 0 0 20px;
+}
+
+#ism .ismDefList {
+    width: 100%;
+    overflow: auto;
+}
+
+#ism .ismDefList dt {
+   float: left;
+   clear: left;
+   margin: 0 0 5px;
+   width: 60%;
+}
+
+#ism .ismDefList dd {
+    float: left;
+    font-weight: bold;
+    margin: 0 0 5px;
+    width: 40%;
+}
+
+#ism .ismLinkList {
+    margin: 5px;
+}
+
+#ism .ismLinkList li {
+    margin: 0 0 5px;
+}
+
+.ism .ismKeyList li,
+#ism .ismKeyList li {
+   margin: 0 0 5px;
+}
+
+.ism .ismKeyImg,
+#ism .ismKeyImg {
+    margin: 0 4px 0 0;
+}
+
+.ism .ismFormList li {
+    float: left;
+    margin: 0 0 10px;
+    width: 100%;
+}
+
+.ism .ism-list--horizontal > li {
+    float: left;
+}
+
+.ism .ism-link-bar > li {
+    border-left: 1px solid #050528;
+}
+
+.ism .ism-link-bar > li:first-child {
+    border-left: none;
+}
+
+.ism .ism-link-bar > li > a {
+    padding: 5px;
+}
+
+/* links */
+#ism .ismPLLink {
+  color: #050528;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#ism .ismPLLink:before {
+    color: #679db9;
+    content: '» ';
+}
+
+#ism .ismMoreLink {
+  color: #050528;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#ism .ismMoreLink:before {
+    color: #679db9;
+    content: '» ';
+}
+
+#ism .ismIcoLink {
+    padding: 0 0 0 18px;
+}
+
+#ism .ismClose {
+    background: url(../img/close.png) no-repeat right center;
+    color: #fff;
+    float: right;
+    padding: 0 20px 0 0;
+    text-decoration: none;
+}
+
+/* tooltip */
+.ism .wijmo-wijtooltip .wijmo-wijtooltip-container {
+    padding: 0;
+}
+
+.ism .wijmo-wijtooltip {
+    font: inherit;
+    -moz-box-shadow: 0 2px 6px #999;
+    -webkit-box-shadow: 0 2px 6px #999;
+    box-shadow: 0 2px 6px #999;
+}
+.ie7 .ism .wijmo-wijtooltip {
+    font-family: Arial,helvetica,sans-serif;
+    font-size: 13px;
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+.ism .ismTooltip {
+    width: 20px;
+    background: #666;
+    color: #fff;
+    cursor: help;
+    padding: 3px 6px;
+    text-align: center;
+}
+.ism .ismRHSTFList .ismTooltip {
+    position: absolute;
+    top: 5px;
+    left: -17px;
+    font-size: 9px;
+    padding: 1px 3px;
+    margin: 0;
+}
+.ism .ismTooltipWrapper {
+    padding: 10px;
+}
+
+.ie7 .ism .ismTooltipWrapper {
+    width: 142px;
+}
+
+.ism .ismTooltipTitle {
+    background: #639ec8;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.ism .ismTooltipText {
+    color: #333;
+    font-size: 93%;
+    margin: 0;
+    padding: 10px;
+    width: 180px;
+}
+
+.ism .ismTooltipFixture {
+    color: #639ec8;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.ism .ismTooltipDate {
+    color: #333;
+    margin: 0 0 5px;
+}
+
+/* block quote */
+
+#ism blockquote {
+    background: #eee;
+    color: #444;
+    padding: 1em;
+    margin: 10px 25px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+#ism p + blockquote {
+    margin-top: -8px;
+}
+
+#ism blockquote small {
+    display: inline-block;
+    color: #639ec8;
+    font-size: 12px;
+    width: 100%;
+}
+
+#ism blockquote small:before {
+    content: ' - ';
+}
+
+/* superscript */
+#ism sup {
+    margin: 0 0 0 2px;
+}
+
+/* subscript */
+#ism sub {
+    bottom: 0;
+    margin: 0 0 0 2px;
+}
+
+/* footnote */
+.ism .ismFootnote,
+#ism .ismFootnote {
+    background: #f1f6fa;
+    color: #639ec8;
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: normal;
+    padding: 10px;
+    margin: 0 0 15px;
+}
+.ie7 .ism .ismFootnote,
+.ie7 #ism .ismFootnote {
+    margin-bottom: 0;
+}
+/* tables */
+.ism .ismTable,
+#ism .ismTable {
+    border: 1px solid #DBE9F2;
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.ism caption,
+#ism caption {
+    color: #679db9;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+}
+
+/* Add this class to an ismTable to hide it's thead content */
+.ism .ismTable .ismHideContent {
+    position: absolute;
+    top: 0;
+    left: -9999em;
+}
+
+.ism table thead tr.ismOdd,
+#ism table thead tr.ismOdd {
+    background: #fff;
+}
+
+.ism .ismTable tr:nth-child(even),
+#ism .ismTable tr:nth-child(even) {
+    background: #F1F6FA;
+}
+
+.ism .ismTable th,
+#ism .ismTable th,
+.ism .ismTable thead td,
+#ism .ismTable thead td {
+    background: #dbe9f2;
+    color: #639EC8;
+    border-right: 1px solid #fff;
+    padding: 5px;
+    text-align: left;
+}
+
+.ism .ismTable tbody th {
+    background: none;
+}
+
+.ism .ismTable th:last-child,
+#ism .ismTable th:last-child {
+    border-right: 1px solid #dbe9f2;
+}
+
+.ism .ismGameweekPoints tbody th,
+#ism .ismGameweekPoints tbody th {
+    background: none;
+}
+
+.ism .ismTable td,
+#ism .ismTable td {
+    border-top: 1px solid #dbe9f2;
+    border-right: 1px solid #dbe9f2;
+    color: #444;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.ism td:last-child,
+#ism td:last-child {
+    border-right: 0px solid #fff;
+}
+
+/* No JS Message */
+.no-js #ism .ismNoJsMsg {
+    background: #000;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    border-top: 2px solid #ff0;
+    border-bottom: 2px solid #ff0;
+    margin: auto;
+    padding: 40px 20px;
+    width: 96%;
+    color: #ff0;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.js #ism .ismNoJsMsg {
+    display: none;
+}
+
+/* ============== */
+/* = Navigation = */
+/* ============== */
+
+/* ismNav is used for the primary game navigation */
+.ism .ismNav {
+    position: relative;
+    /* We have to override overflow hidden here from ismLine in OOCSS grids (grids.css) for sub nav to work */
+    overflow: visible;
+}
+
+.ism .ismNav li {
+    position: relative;
+    color: #fff;
+    background: #929292 url(../img/nav_gradient_slice.png) 0 0 repeat-x; /* Old browsers */
+    background: -moz-linear-gradient(top,  #aaaaaa 0%, #919191 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aaaaaa), color-stop(100%,#919191)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #aaaaaa 0%,#919191 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #aaaaaa 0%,#919191 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #aaaaaa 0%,#919191 100%); /* IE10+ */
+    background: linear-gradient(top,  #aaaaaa 0%,#919191 100%); /* W3C */
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    z-index: 900;
+}
+
+/* ismCurrent is applied to the current selected anchor element in the nav */
+.ism .ismNav .ismCurrent {
+    background: #fff;
+    color: #000;
+}
+
+.ism .ismNav a {
+    border-left: 1px solid #fff;
+    color: #fff;
+    display: block;
+    font-size: 11px;
+    text-decoration: none;
+    padding: 16px 10px;
+}
+
+/* remove left border from the first tab */
+.ism .ismNav li:first-child a {
+    border-left: none;
+}
+
+/* ismHasSubNav is applied to all list items that have a nested sub nav list */
+.ism .ismNav .ismHasSubNav a {
+    background: url(../../img/sub-nav-arows.png) no-repeat 90% 18px;
+}
+
+.ism .ismNav .ismHasSubNav .ismCurrent {
+    background: #fff url(../../img/sub-nav-arows.png) no-repeat 90% -14px;
+}
+
+/* ismSubNav is a list of nav items contained in an ismNav list */
+.ism .ismSubNav {
+    position: absolute;
+    background: transparent url(../../img/nav-w-subnav.png) no-repeat 0 0;
+    display: block;
+    left: -999em;
+    list-style: none;
+    margin: 0;
+    padding: 13px 0 0;
+    top: 33px;
+    opacity: .1;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity  0.3s ease;
+    z-index: 800;
+    width: 150%;
+    overflow: visible;
+}
+
+.ism .ismNav .ismSubNav a {
+    background: none;
+    border-left: none;
+}
+
+.ism .ismNav li li {
+    background-color: #969696;
+    background-image: none;
+    border-bottom: 1px solid #cdcdcd;
+}
+.ism .ismNav li:hover ul {
+    left: 0;
+    top: 33px;
+    opacity: 1;
+    z-index: 800;
+}
+.ism .ismNav li a:hover + ul {
+    top: 33px;
+    left: 0;
+    z-index: 800;
+}
+.ie7 .ism .ismNav li a:hover + ul,
+.ie7 .ism .ismNav li:hover ul {
+    top: 34px;
+}
+.ism .ismNav li:hover ul li,
+.ism .ismNav li a:hover + ul li {
+    color: #ededed;
+    display: block;
+    text-align: left;
+    font-weight: normal;
+    z-index: 801;
+}
+.ism .ismNav li:hover ul li:last-child {
+    border-bottom: 0px solid #cdcdcd;
+}
+.ism .ismNav li:hover ul li a {
+    border-right: 0px solid #fff;
+    display: block;
+    float: none;
+    font-size: 10px;
+    padding: 12px 10px;
+}
+.ism .ismNav .ismCurrent li a {
+    color: #ededed;
+}
+.ism .ismNav li:hover ul li a:hover {
+    display: block;
+    padding: 12px 10px;
+}
+.ie7 .ism .ismNav li:hover ul li a:hover {
+    background: #a9a9a9;
+}
+
+.ism .ismNav li:hover ul li:hover {
+    background: #a9a9a9;
+}
+.ism .ismNav li:hover ul .ismNoLink:hover {
+    background: #969696;
+}
+.ism .ismNav li .ismNoLink span {
+    color: #ededed;
+    display: block;
+    font-size: 10px;
+    padding: 12px 10px;
+    text-shadow: 0px .5px 0px rgba(0, 0, 0, 0.4);
+    opacity: .7;
+}
+.ism .ismNav li li dl {
+    margin: 0;
+    padding: 0 0 10px 10px;
+}
+.ism .ismNav li li dt,
+.ism .ismNav li li dd {
+    display: inline-block;
+    font-size: 9px;
+}
+.ism .ismNav li li dd {
+    padding-left: 5px;
+}
+.ie7 .ism .ismNav li li dt {
+    display: block;
+    float: left;
+}
+.ie7 #ism .ismNav li li dd {
+    display: block;
+}
+.ism .ismNav li li .ismExtraInfo {
+    color: #ededed;
+    text-shadow: 0px .5px 0px rgba(0, 0, 0, 0.4);
+    margin-top: -7px;
+    opacity: .7;
+}
+
+/* ======== */
+/* = tabs = */
+/* ======== */
+
+.ism .ismTabs,
+#ism .ismTabs {
+    background: #fff;
+    border: none;
+    color: #444;
+    font-family: Arial,helvetica, sans-serif;
+    font-size: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    position: relative;
+}
+.ie7 .ism .ismTabs,
+.ie7 #ism .ismTabs {
+    width: 100%;
+}
+
+#ism .ismTabHead {
+    background: #050528;
+    color: #fff;
+}
+
+.ie7 #ism .ismTabHead {
+    padding-bottom: 10px;
+}
+
+#ism .ismTabHeading {
+    color: #fff;
+    font-weight: bold;
+    float: left;
+    border: none;
+    margin: 12px 10px;
+    padding: 0;
+}
+
+.ism .ismTabWildcard {
+    float: right;
+    margin: 8px 5px 0 0;
+}
+
+#ism .ismTabWildcard p {
+    font-weight: bold;
+    color: #fff;
+    margin: 5px 3px 0 0;
+}
+
+#ism .ismHelpLink {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px 0;
+}
+
+#ism .ismTabs .ismTable {
+    display: table;
+}
+
+.ism .ui-tabs-nav,
+#ism .ui-tabs-nav {
+    background: none;
+    border: none;
+    margin-bottom: 1px;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.ism .ui-tabs-nav .ui-state-default,
+#ism .ui-tabs-nav .ui-state-default {
+    background: #fff;
+    border: 1px solid #d4d4df !important; /* sorry, had to do this to override jQuery UI */
+    margin: 0 1px 0 0;
+}
+
+.ism .ui-tabs-nav .ui-tabs-selected,
+#ism .ui-tabs-nav .ui-tabs-selected {
+    background: #050528;
+    border: 1px solid #050528 !important; /* same here :-/ */
+    color: #fff;
+    padding: 0;
+}
+
+.ism .ui-tabs .ui-tabs-nav a,
+#ism .ui-tabs .ui-tabs-nav a {
+    color: #050528;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.ism .ismTabs .ui-tabs-selected a,
+#ism .ismTabs .ui-tabs-selected a {
+    color: #fff;
+}
+
+#ism .ismTabs .ismTabSectionHeading {
+    background: #050528;
+    border: 0px solid #fff;
+    color: #fff;
+    font-size: 13px;
+    margin: 0;
+    padding: 13px 10px;
+
+}
+#ism .ismTabs .ismTabSectionHeading span {
+    font-weight: normal;
+}
+
+.ism .ismTabs .ui-tabs-panel {
+    padding: 0;
+}
+
+/* tabs help */
+.js .ism .ismHelp {
+    display: none;
+}
+
+.ism .ismHelp,
+#ism .ismHelp {
+    color: #666;
+    font-size: 12px;
+    padding-top: 0;
+}
+
+.ism .ismHelpHeading,
+#ism .ismHelpHeading {
+    color: #639ec8;
+    font-size: 14px;
+}
+
+.ism .ismHelpList,
+#ism .ismHelpList {
+    margin: 10px 0 15px;
+}
+
+.ism .ismHelpText,
+#ism .ismHelpText {
+    margin: 0 0 15px;
+}
+
+.ism .ismKeyList,
+.ism .ismHelpList,
+.ism .ismHelpText,
+#ism .ismKeyList,
+#ism .ismHelpList,
+#ism .ismHelpText {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.ism .ismHelpList li,
+#ism .ismHelpList li {
+    margin: 0 0 5px;
+}
+
+.ism .ui-dialog-titlebar,
+#ism .ui-dialog-titlebar {
+    border: none;
+    font-size: 16px;
+}
+
+/* ========= */
+/* = forms = */
+/* ========= */
+
+.ism legend {
+    display: block;
+    width: 100%;
+}
+
+.ism fieldset,
+#ism fieldset {
+    margin: 0 0 10px;
+}
+/* Legends are handled by giving them a class of .ismH2, so no need to add in here */
+#ism legend {
+    display: block;
+    width: 100%;
+}
+#ism fieldset li {
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+.ism label,
+.ism .ismLabel,
+#ism label,
+#ism .ismLabel {
+    color: #555;
+    display: block;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+.ie7 .ism label,
+.ie7 .ism .ismLabel,
+.ie7 #ism label,
+.ie7 #ism .ismLabel {
+    clear: left;
+}
+#ism #ismTeamForm label {
+    display: inline-block;
+}
+.ie7 #ism #ismTeamForm label {
+    clear: none;
+    display: inline;
+}
+.ism .ismWizard input + label,
+.ism .ismWizard input + .ismLabel,
+#ism .ismWizard input + label,
+#ism .ismWizard input + .ismLabel {
+    float: left;
+    width: 40%;
+    margin: 0;
+}
+.ie7 .ism .ismWizard input + label,
+.ie7 .ism .ismWizard input + .ismLabel,
+.ie7 #ism .ismWizard input + label,
+.ie7 #ism .ismWizard input + .ismLabel {
+    clear: none;
+    display: inline;
+}
+.ism input,
+.ism .ismInput,
+#ism input,
+#ism .ismInput {
+    border: 1px solid #e2e9ef;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    color: #666;
+    clear: left;
+    padding: 5px;
+    margin-left: 2px;
+}
+.ie7 #ism input,
+.ie7 #ism .ismInput {
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+
+#ism input[type="image"] {
+    border: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    padding: 1px;
+}
+
+#ism .ismFormSmall .ismSelect {
+    width: auto;
+}
+
+#ism .ismInlineForm {
+    margin: 10px 0;
+}
+
+#ism .ismInlineForm label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+#ism .ismInlineForm select {
+    margin: 0 10px 0 5px;
+}
+
+.ism label[for*="Radio"],
+.ism label[for*="Box"],
+#ism label[for*="Radio"],
+#ism label[for*="Box"] {
+
+}
+
+.ism input[type="radio"],
+.ism .ismRadio,
+.ism input[type="checkbox"],
+.ism .ismCheckBox,
+#ism input[type="radio"],
+#ism .ismRadio,
+#ism input[type="checkbox"],
+#ism .ismCheckBox {
+    display: inline-block;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.ism input[name="username"],
+.ism input[type="email"] {
+    width: 150px;
+}
+
+.ism select,
+.ism .ismSelect,
+#ism select,
+#ism .ismSelect {
+    border: 1px solid #e2e9ef;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    color: #444;
+    padding: 5px;
+}
+
+#ism textarea,
+#ism .ismTextArea {
+    border: 1px solid #e2e9ef;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    color: #666;
+    padding: 5px;
+    margin-left: 2px;
+}
+
+.ism .ismFormHelp,
+#ism .ismFormHelp {
+    color: #666;
+    font-size: 93%;
+    margin: 0 0 0 10px;
+}
+
+#ism textarea + .ismFormHelp {
+    display: block;
+    margin: 10px 0 0;
+}
+
+/**
+* Login form
+*
+******/
+
+#ism .ismPrimaryLogin fieldset {
+    float: left;
+    margin: 5px 10px 5px 0;
+}
+#ism .ismLoginForm li {
+    margin-bottom: 10px;
+}
+#ism .ismPrimaryLogin ul {
+    display: inline-block;
+    float: left;
+}
+#ism .ismPrimaryLogin li {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+#ism .ismPrimaryWide .ismPrimaryLogin {
+    background: #f2f2f4;
+    padding: 5px 10px;
+}
+#ism .ismPrimaryLogin .ismLabel,
+#ism .ismPrimaryLogin label {
+    display: inline-block;
+    font-size: 11px;
+    margin: 3px 5px 0 0;
+    text-transform: uppercase;
+}
+#ism .ismPrimaryLogin input[type="text"],
+#ism .ismPrimaryLogin input[type="password"] {
+    width: 125px;
+}
+#ism .ismPrimaryLogin input[type="submit"] {
+    float: left;
+    clear: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: #050528;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+#ism .ismPrimaryLogin form + a {
+    display: block;
+    margin: 25px 0 0;
+}
+#ism .ismResetRegister {
+    float: left;
+    margin: 10px 0 0;
+    width: auto;
+}
+#ism .ismResetRegister a {
+    font-size: 11px;
+    font-weight: bold;
+}
+#ism .ismResetRegister a:after {
+    color: #8cbde0;
+    content: ' »';
+}
+
+/**
+* Button styles
+*
+******/
+
+#ism .ismButtonBar {
+    background: #dbdbdb;
+    padding: 10px;
+}
+.ie7 #ism .ismButtonBar {
+}
+/* For actions that aeren't part of a form: Auto complete, etc. */
+.ism .ismButton,
+#ism .ismButton {
+    background: #7eafd2;
+    border: none;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.ism .ismBBTooltip {
+    padding: 3px 7px;
+}
+
+/* Form buttons - no need for a class */
+.ism input[type="submit"],
+.ism input[type="reset"],
+.ism button,
+#ism input[type="submit"],
+#ism input[type="reset"],
+#ism button,
+#ism .ismTransfersConfirm .ismButton {
+    background: #050528;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+#ism .ismReset {
+    float: right;
+    padding: 3px 10px;
+}
+.ie7 #ism .ismReset {
+    margin-top: -20px;
+}
+/* =============== */
+/* = scoreboards = */
+/* =============== */
+
+.ism .ismHelpSubHeading,
+#ism .ismHelpSubHeading {
+    margin: 0 0 5px;
+}
+
+#ism .ismSB {
+    overflow: auto;
+    background: #e6e6e6;
+    color: #666;
+    border-bottom: 1px solid #fff;
+    padding: 0 10px;
+}
+
+.ism .ismSBSection,
+#ism .ismSBSection {
+    overflow: auto;
+}
+
+.ism .ismSBSectionHeading,
+#ism .ismSBSectionHeading {
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* have to do this slightly weird stuff with margin and padding so it doesn't break the My Tean - During scoreboard */
+    margin: 15px 0;
+}
+
+.ism .ismSBNewsLink {
+    float: left;
+}
+
+#ism .ismSBMoreLink {
+    display: block;
+    margin: 15px 0;
+}
+
+#ism .ismSBMoreLink > a {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+#ism .ismDTLink {
+    font-size: 11px;
+}
+
+#ism .ismSBStat {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#ism .ismSBValue {
+    margin: 0 auto 15px;
+    width: 70%;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#ism .ismStatLink {
+    font-size: 20px;
+}
+
+#ism .ismSBPrimary {
+    background: #82b1d3 url(../img/sb_gradient_slice.png) 0 0 repeat-x;
+    background-image: -moz-linear-gradient(top,#82b1d3,#9bc2de);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #82b1d3),color-stop(1,#9bc2de));
+    border: 1px solid #84abc8;
+    border-top: 1px solid #c7ddeb;
+    border-bottom: 1px solid #4e616e;
+    padding: 7px 10px;
+    color: #fff;
+    font-size: 28px;
+}
+#ism .ismSBStat .ismToSpendError {
+    background: #f33;
+    background-image: -moz-linear-gradient(top,#f00,#f33);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f00),color-stop(1,#f33));
+    border: 1px solid #f33;
+    border-top: 1px solid #f33;
+    border-bottom: 1px solid #f00;
+    padding: 7px 10px;
+    color: #fff;
+    font-size: 28px;
+}
+#ism .ismSBPrimaryText {
+    font-size: 182%;
+    padding: 10px 10px;
+}
+
+#ism .ismSBFreeTransfer {
+    width: 45%;
+}
+
+#ism .ismSBSecondary {
+    background: #fff;
+    border-right: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+    border-bottom: 1px solid #7e7e7e;
+    padding: 8px 10px;
+    color: #050528;
+    line-height: 1.1;
+}
+
+#ism .ismSBPtsWrapper {
+    margin: 0 0 10px;
+}
+
+#ism .ismSBSecondaryTitle {
+    font-size: 77%;
+}
+
+#ism .ismSBSecondaryVal {
+    font-size: 153.9%;
+}
+
+
+#ism .ismSBPtsWrapper {
+    margin: 0 0 10px;
+}
+
+#ism .ismSBPts {
+    padding: 10px;
+    margin: 0 10px;
+    width: 70%;
+}
+
+#ism .ismSBPtsList {
+    float: right;
+    margin: 6px 0;
+    width: 60%;
+}
+
+#ism .ismSBMiscList {
+    margin: 28px 0 6px;
+    margin: 7px auto;
+    width: 90%;
+}
+
+#ism .ismSBDefList dt,
+#ism .ismSBDefList dd {
+    font-size: 11px;
+    margin: 0 0 5px;
+}
+
+#ism .ismSBDefList dt {
+    width: 50%;
+}
+
+#ism .ismSBDefList dd {
+    width: 50%;
+}
+
+.ie7 #ism .ismSBDefList dt {
+    width: 49%;
+}
+
+#ism .ismSBSocialLinks {
+    margin-bottom: 10px;
+}
+
+#ism .ismError {
+    background: none repeat scroll 0 0 #F99;
+    border-bottom: 1px solid #F00;
+    border-top: 1px solid #F00;
+    color: #000;
+    margin: 0 0 10px;
+    padding: 4px 5px;
+    width: auto;
+}
+#ism .ismInformation {
+    background: url(../img/icons/information.png) no-repeat;
+    padding-left: 20px;
+}
+
+
+/* My Team Scoreboard 2015/16 */
+#ism .ism-team-scoreboard {
+    padding: 0;
+}
+
+/* team scoreboard heading - outside of a team scoreboard section */
+#ism .ism-team-scoreboard__heading {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#ism .ism-team-scoreboard__section {
+    padding: 0 15px;
+}
+
+#ism .ism-scoreboard__chip-status {
+    padding: 6px 5px;
+    background-color: #1ba5e5;
+    font-size: 11px;
+}
+
+/* Scoreboard panel - a tile that shows a value in a scoreboard. E.g. points */
+#ism .ism-scoreboard-panel {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+
+#ism .ism-scoreboard-panel__points {
+    padding: 20px 10px;
+}
+
+#ism .ism-scoreboard-panel__points--active-chip {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#ism .ism-scoreboard-panel__heading {
+    margin: 0;
+    font-size: 10px;
+}
+
+/* Primary scoreboard panel -  */
+#ism .ism-scoreboard-panel--primary {
+    border-width: 1px 0;
+    border-style: solid;
+    border-top-color: #769db8;
+    border-bottom-color: white;
+    margin-bottom: 8px;
+    background-color: #8ebede;
+    color: white;
+    font-size: 40px;
+}
+
+#ism .ism-scoreboard-panel--primary__value > sub {
+    font-size: 22px;
+}
+
+
+#ism .ism-scoreboard-panel--secondary {
+    margin: 4px 0 12px;
+    color: #050627;
+}
+
+#ism .ism-scoreboard-panel--secondary__value {
+    font-size: 22px;
+}
+
+#ism .ism-scoreboard-panel--secondary__value > sub {
+    font-size: 15px;
+}
+
+#ism .ism-scoreboard__def-list {
+    margin-top: 3px;
+}
+
+#ism .ism-scoreboard__dt-link {
+    margin-top: 7px;
+}
+
+#ism .ism-scoreboard__social-links {
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+/* ========= */
+/* = Chips = */
+/* ========= */
+
+.ism .ism-chips {
+    padding: 15px 15px 20px;
+    background-color: #e6e6e6;
+}
+
+.ism .ism-chip {
+    margin-right: 1px;
+    padding: 5px;
+    background-color: #1ba5e5;
+}
+
+#ism .ism-chip__heading {
+    width: 47%;
+    margin: 0;
+    color: white;
+    font-size: 10px;
+    text-transform: uppercase;
+    float: left;
+    text-align: center;
+}
+
+.ism .ism-chip__actions {
+    width: 53%;
+    float: left;
+    margin: 2px 0;
+}
+
+.ism .ism-chip__button {
+    min-width: 50px;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#ism .ism-chip__button--cancel {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+    background-color: #dd0c39;
+}
+
+.ism .ism-chip__tip > .ismTooltip {
+    display: inline-block;
+    height: 14px;
+    padding: 3px 0;
+    vertical-align: middle;
+}
+
+/* Disabled chip */
+
+.ism .ism-chip.is-disabled {
+    background-color: #a5d1e5;
+}
+
+#ism .ism-chip__button:disabled {
+    cursor: default;
+    background-color: #9cc6d9;
+}
+
+.ism .ism-chip.is-disabled .ismTooltip {
+    background-color: #9cc6d9;
+}
+
+/* Played chip */
+
+.ism .ism-chip--played {
+    color: #666;
+    background-color: #d9d9d9;
+}
+
+#ism .ism-chip--played .ism-chip__heading {
+    color: #686868;
+}
+
+#ism .ism-chip--played .ism-chip__actions {
+    margin: 1px 0;
+}
+
+.ism .ism-chip__info {
+    display: inline-block;
+    width: 50px;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.ism .ism-chip__link {
+    display: inline-block;
+    color: white;
+    vertical-align: middle;
+}
+
+#ism a.ism-chip__link:hover {
+    text-decoration: none;
+}
+
+.ism .ism-chip__tip-played {
+    width: 20px;
+    padding: 3px 6px;
+    background: #bfbfbf;
+    color: #fff;
+    text-align: center;
+}
+
+.ism .ism-chips__wildcard-active {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #444;
+    color: #444;
+    background-color: #d9d9d9;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ism .ism-chip__tip--wildcard {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 14px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+/* ============== */
+/* = pagination = */
+/* ============== */
+#ism .ismPaginationWrapper {
+    background: #dfebf3;
+    font-size: 12px;
+}
+
+#ism .ismPaginationWrapper .ui-list .ui-page {
+    background: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+#ism .ismPaginationWrapper .ui-list .ui-state-active {
+    color: #639ec8;
+}
+
+#ism .ismPaginationWrapper .ui-list .ui-state-default a {
+    color: #747474;
+}
+
+#ism .ismPaginationWrapper .ui-list .ui-state-hover a {
+    color: #454545;
+}
+
+#ism .ismPagination {
+    margin: 10px 0;
+    text-align: center;
+}
+#ism table .ismPagination {
+    margin: 0;
+}
+#ism .ismPagination li {
+    display: inline;
+}
+#ism .ismPagination a {
+    padding: 1px 3px;
+}
+#ism .ismPagination a:hover {
+    border: 0px solid #050528;
+    padding: 1px 3px;
+    text-decoration: underline;
+}
+#ism .ismPagination .ismPagCurrent {
+    background: #679db9;
+    border: 0px solid #050528;
+    -webkit-border-radius: 3px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    padding: 1px 3px;
+}
+
+#ism .ismTable + .ismPagination,
+#ism .ismFixtureTable + .ismPagination {
+    background: #dbe9f2;
+    margin: 0 0 20px;
+    padding: 3px 0;
+}
+
+/* =================== */
+/* = Event Round Nav = */
+/* =================== */
+
+#ism .jcarousel-skin-ism .jcarousel-container {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #F0F6F9;
+    border: 0px solid #cbcbcb;
+}
+
+.jcarousel-skin-ism .jcarousel-direction-rtl {
+    direction: rtl;
+}
+
+.jcarousel-skin-ism .jcarousel-container-horizontal {
+    height: 85px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.jcarousel-skin-ism .jcarousel-container-vertical {
+    width: 75px;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.jcarousel-skin-ism .jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-skin-ism .jcarousel-clip-horizontal {
+    width:  100%;
+    height: 100%;
+}
+
+.jcarousel-skin-ism .jcarousel-clip-vertical {
+    width:  75px;
+    height: 245px;
+}
+
+.jcarousel-skin-ism .jcarousel-item {
+    width: 143px;
+    height: 100%;
+}
+
+.jcarousel-skin-ism .jcarousel-item-horizontal {
+	margin-left: 0;
+    margin-right: 0;
+}
+
+.jcarousel-skin-ism .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+.jcarousel-skin-ism .jcarousel-item-vertical {
+    margin-bottom: 10px;
+}
+
+.jcarousel-skin-ism .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-ism .jcarousel-next-horizontal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 100%;
+    cursor: pointer;
+    -webkit-border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    background: #b7bfc8 url(../img/carousel-arrows.png) no-repeat -62px 35px;
+}
+
+.jcarousel-skin-ism .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background: transparent url(../img/carousel-arrows.png) no-repeat -62px 35px;
+}
+
+.jcarousel-skin-ism .jcarousel-next-horizontal:hover,
+.jcarousel-skin-ism .jcarousel-next-horizontal:focus {
+    background-position: -62px -115px;
+}
+
+.jcarousel-skin-ism .jcarousel-next-horizontal:active {
+    background-position: -62px -115px;
+}
+
+.jcarousel-skin-ism .jcarousel-next-disabled-horizontal,
+.jcarousel-skin-ism .jcarousel-next-disabled-horizontal:hover,
+.jcarousel-skin-ism .jcarousel-next-disabled-horizontal:focus,
+.jcarousel-skin-ism .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+.jcarousel-skin-ism .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 100%;
+    cursor: pointer;
+    -webkit-border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+    background: #b7bfc8 url(../img/carousel-arrows.png) no-repeat 5px 35px;
+}
+
+.jcarousel-skin-ism .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 0;
+    background: #b7bfc8 url(../img/carousel-arrows.png) no-repeat 5px 35px;
+}
+
+.jcarousel-skin-ism .jcarousel-prev-horizontal:hover,
+.jcarousel-skin-ism .jcarousel-prev-horizontal:focus {
+    background-position: 5px -115px;
+}
+
+.jcarousel-skin-ism .jcarousel-prev-horizontal:active {
+    background-position: 5px -115px;
+}
+
+.jcarousel-skin-ism .jcarousel-prev-disabled-horizontal,
+.jcarousel-skin-ism .jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-skin-ism .jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-skin-ism .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -3px -7px;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-ism .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.jcarousel-skin-ism .jcarousel-next-vertical:hover,
+.jcarousel-skin-ism .jcarousel-next-vertical:focus {
+    background-position: 0 -32px;
+}
+
+.jcarousel-skin-ism .jcarousel-next-vertical:active {
+    background-position: 0 -64px;
+}
+
+.jcarousel-skin-ism .jcarousel-next-disabled-vertical,
+.jcarousel-skin-ism .jcarousel-next-disabled-vertical:hover,
+.jcarousel-skin-ism .jcarousel-next-disabled-vertical:focus,
+.jcarousel-skin-ism .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -32px;
+}
+
+.jcarousel-skin-ism .jcarousel-prev-vertical {
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.jcarousel-skin-ism .jcarousel-prev-vertical:hover,
+.jcarousel-skin-ism .jcarousel-prev-vertical:focus {
+    background-position: 0 -32px;
+}
+
+.jcarousel-skin-ism .jcarousel-prev-vertical:active {
+    background-position: 0 -64px;
+}
+
+.jcarousel-skin-ism .jcarousel-prev-disabled-vertical,
+.jcarousel-skin-ism .jcarousel-prev-disabled-vertical:hover,
+.jcarousel-skin-ism .jcarousel-prev-disabled-vertical:focus,
+.jcarousel-skin-ism .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+/* Styles for ISMs bit of the Carousel */
+.jcarousel-skin-ism .jcarousel-clip-horizontal {
+    width:  93%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.jcarousel-skin-ism .jcarousel-list {
+    height: 100%;
+}
+.jcarousel-skin-ism .jcarousel-item {
+    display: inline-block;
+    background: #e9e9e9; /* Old browsers */
+    background: -moz-linear-gradient(top, #e9e9e9 0%, #d5d5d5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e9e9e9), color-stop(100%,#d5d5d5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e9e9e9 0%,#d5d5d5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e9e9e9 0%,#d5d5d5 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #e9e9e9 0%,#d5d5d5 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9e9e9', endColorstr='#d5d5d5',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #e9e9e9 0%,#d5d5d5 100%); /* W3C */
+    color: #050528  ;
+    border-right: 1px dotted #999;
+    height: 100%;
+    width: 115px;
+    margin: 0;
+}
+#ism .jcarousel-list .ismInProgress {
+    background: #4e4e66; /* Old browsers */
+    background: -moz-linear-gradient(top, #4e4e66 0%, #181838 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4e4e66), color-stop(100%,#181838)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #4e4e66 0%,#181838 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #4e4e66 0%,#181838 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #4e4e66 0%,#181838 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4e66', endColorstr='#181838',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #4e4e66 0%,#181838 100%); /* W3C */
+}
+#ism .jcarousel-list li .inner {
+    height: 88%;
+    padding: 5px;
+}
+#ism .jcarousel-skin-ism h3 {
+    background: #050528;
+    color: #fff;
+    display: inline-block;
+    font-size: 84.6%;
+    margin: 0 10px 5px 0;
+    padding: 3px;
+    width: auto;
+}
+#ism .jcarousel-skin-ism .ismInProgress h3 {
+    background: #fff;
+    color: #050528;
+}
+#ism .jcarousel-skin-ism .jcarousel-list p {
+    color: #666;
+    margin: 0;
+}
+#ism .jcarousel-skin-ism .ismInProgress p {
+    color: #fff;
+    font-size: .846em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#ism .jcarousel-skin-ism .ismInProgress a {
+    color: #fff;
+}
+
+#ism .jcarousel-list .ismPoints {
+    color: #050528;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    clear: left;
+}
+#ism .ismPoints sub {
+    font-size: .7em;
+    font-weight: normal;
+    text-transform: uppercase;
+    bottom: 0;
+}
+#ism .ismPoints img {
+}
+#ism .jcarousel-list dl,
+#ism .jcarousel-list ul {
+    margin: 0;
+}
+#ism .jcarousel-list dt {
+    color: #666;
+    display: block;
+    float: left;
+    font-size: .846em;
+    font-weight: normal;
+    margin-right: 10px;
+    width: 45px;
+}
+#ism .jcarousel-list dd {
+    font-size: .846em;
+    font-weight: bold;
+}
+#ism .ismDeadline {
+    font-size: .846em;
+}
+#ism .ismDeadline strong {
+    font-weight: normal;
+}
+#ism .ismDeadline sub {
+    color: #639ec8;
+    font-size: 1em;
+    text-transform: uppercase;
+    bottom: 0;
+}
+#ism .jcarousel-list li li {
+    background: none;
+}
+#ism .jcarousel-list li li a {
+    color: #050528;
+    font-size: .8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+#ism .jcarousel-list li li a:hover {
+    text-decoration: underline;
+}
+#ism .jcarousel-list li li a:before {
+    color: #679db9;
+    content: '» ';
+}
+
+/* ========= */
+/* = pitch = */
+/* ========= */
+
+#ism .ismDataView,
+#ism .ismPitchContainer {
+
+    margin: 0 0 10px;
+}
+
+#ism .ismPitch {
+    background: #e6e6e6 url(../images/pitch.jpg) no-repeat center bottom;
+    background-size: 480px 480px;
+    height: 480px;
+    margin-bottom: 20px;
+}
+
+#ism .ismPitchCell {
+    height: 120px;
+    text-align: center;
+}
+
+#ism .ismPlayerContainer {
+    background: url(../img/shirt_shadow.png) no-repeat center 60%;
+    height: 120px;
+}
+
+#ismTeamDisplayGraphical .ismShirt {
+    height: 63px;
+    width: 48px;
+    margin: 0 0 2px;
+}
+
+#ismTeamDisplayData .ismShirt {
+    height: 22px;
+    width: 17px;
+}
+
+#ism .ismShirtZero {
+    cursor: pointer;
+}
+
+#ism .ismElementDetail {
+    margin: 0;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ism .ismElementDetail dt,
+.ism .ismElementDetail dd {
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+}
+
+#ism .ismElementText {
+    background: #19803f;
+    display: inline-block;
+    padding: 1px;
+}
+#ism .ismPitchStat {
+    font-size: 10px;
+}
+#ism .ismPitchStat a {
+    color: #fff;
+    font-size: 10px;
+    background: transparent;
+    margin: 0;
+    padding: 0 2px;
+}
+#ism .ismPitchMatch {
+    font-size: 10px;
+    font-weight: bold;
+}
+#ism .ismCaptain,
+#ism .ismViceCaptain {
+    display: none;
+}
+
+#ism .ismCaptainOn,
+#ism .ismViceCaptainOn {
+    display: inline;
+}
+
+#ism .ismSub,
+#ism .ismSubx {
+    cursor: pointer;
+}
+
+/* jQuery UI drag and drop */
+#ism .ui-draggable,
+#ism .ui-draggable-dragging {
+    text-align: center;
+    width: 98px;
+}
+
+#ism .ui-draggable-dragging {
+    z-index: 5;
+}
+
+#ism .ui-draggable-dragging .ismPlayerContainer {
+    background: url(../../img/dragging.png);
+    background: rgba(102,102,102,0.6);
+    border: 1px solid #666;
+    height: auto;
+    opacity: 0.8;
+}
+.ie7 #ism .ui-draggable-dragging .ismPlayerContainer {
+/*    background: #999;
+    background: rgba(102,102,102,0.6);
+    border: 1px solid #666;
+    height: auto;
+    opacity: 0.8;
+*/
+    opacity: 0.8;
+    -pie-background: rgba(102,102,102,0.6);
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+#ism .ui-draggable .ismShirt {
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+
+#ism .ui-draggable-dragging .ismShirt {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+
+#ism .ismSubTarget {
+    background: url(../../img/sub_target.png);
+    background: rgba(255,102,0,0.6);
+}
+.ie7 #ism .ismSubTarget {
+    -pie-background: rgba(255,102,0,0.6);
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+#ism .ismDropHover {
+    background: url(../../img/drop_hover.png);
+    background: rgba(153,204,0,0.6);
+}
+.ie7 #ism .ismDropHover {
+    -pie-background: rgba(153,204,0,0.6);
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+
+/* transfers */
+#ism .ismPitchElementRemoved .ismElementDetail {
+    position: relative;
+    z-index: 1;
+}
+#ism .ismPitchElementRemoved .ismElementDetail span {
+    color: #ccc;
+    background-color: rgba(25,128,63,0.5);
+}
+.ie7 #ism .ismPitchElementRemoved .ismElementDetail span {
+    -pie-background: #ffffff;
+    -pie-background: rgba(25,128,63,0.5);
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+#ism .ismPitchElementReplaced .ismElementDetail span  {
+    background: #666;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.ie7 #ism .ismCaptainWrapper {
+    margin-top: -10px;
+}
+
+#ism .ismSponsorPitch,
+.ism .ismSponsorPitch {
+    float: right;
+}
+
+#ism .ismSponsorWrapper,
+.ism .ismSponsorWrapper {
+    margin: 0 0 10px;
+}
+
+
+/* Confirmation */
+#ism .ismTransfersFinal .ismUnit {
+    text-align: left;
+}
+#ism .ismTransfersFinal {
+    margin-top: 15px;
+}
+/* ========= */
+/* = bench = */
+/* ========= */
+
+#ism .ismBench {
+    padding: 0;
+}
+
+/* Have to move the bench image to here because of the bench boost gradient */
+/* Couldn't get pesudo-element to position behind bench */
+#ism .ismBench .ismPitchRow {
+    background: url(../img/bench.png) no-repeat center bottom;
+}
+
+#ism .ismBench .ismElementText {
+    background: #666;
+}
+#ism .ismBenchPriority {
+    background: #ccc;
+    border-top: 1px solid #f1f1f1;
+    color: #666;
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 138.5%;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 0;
+}
+
+#ism .ism-chip-bboost.ismPitchContainer {
+    margin: 0;
+}
+
+#ism .ism-chip-bboost .ismPitch {
+    margin-bottom: 0;
+}
+
+#ism .ism-chip-bboost .ismBench {
+    padding-top: 20px;
+    background: #196e3a;
+    background: -moz-linear-gradient(top,  #196e3a 0, #124d28 100px, #124d28 140px);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0px,#196e3a), color-stop(100px,#124d28), color-stop(140px,#124d28));
+    background: -webkit-linear-gradient(top,  #196e3a 0,#124d28 100px,#124d28 140px);
+    background: -o-linear-gradient(top,  #196e3a 0,#124d28 100px,#124d28 140px);
+    background: -ms-linear-gradient(top,  #196e3a 0,#124d28 100px,#124d28 140px);
+    background: linear-gradient(to bottom,  #196e3a 0,#124d28 100px,#124d28 140px);
+}
+
+#ism .ism-chip-bboost .ismBench .ismPitchRow {
+    background: url(../img/bench.png) no-repeat center bottom;
+}
+
+
+#ism .ism-chip-bboost .ismBench .ismElementText {
+    background-color: #19803f;
+}
+
+#ism .ism-boost-note {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    background-color: #e7f4e9;
+    color: #219149;
+}
+
+/* ============= */
+/* = data view = */
+/* ============= */
+
+#ism .ismDataView {
+    border: 3px solid #DBE9F2;
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+}
+
+/* MTData??? My Team Data? Need to remove so bench boost message sits flush to bench */
+#ism .ismTRData,
+#ism .ismMTData {
+    /*margin-bottom: 10px;*/
+}
+
+/* =========== */
+/* = My Team = */
+/* =========== */
+#ism .ismCaptainsList {
+    list-style-type: none;
+}
+
+#ism .ismCaptainsList label {
+    font-size: 93%;
+    float: left;
+    width: 70px;
+    margin: 6px 0;
+}
+
+#ism .ismCaptainsList select {
+    margin: 0 10px;
+}
+
+#ism .ismTeamSaved {
+    background-color: #f1f3f8;
+    border: 2px solid #c4cde0;
+    margin: 0 0 15px 0;
+    padding: 15px 7px;
+}
+
+#ism .ismTeamSavedMessage {
+    float: left;
+    width: 70%;
+    font-size: 12px;
+}
+
+#ism .ismTeamSavedShare {
+    float: right;
+}
+
+/* ================ */
+/* = Kit designer = */
+/* ================ */
+.ism .ismKitDesigner {
+    position: relative;
+    width: 95%;
+}
+
+.ism .ismKitDesigner legend {
+    color: #639EC8;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px 0;
+    width: auto;
+}
+#ism .ismColourList label {
+    display: inline;
+}
+/* Kit preview */
+.ism .ismKitPreview {
+    position: relative;
+    height: 134px;
+}
+.ismKitPreview ul {
+    margin: 0;
+}
+.ism .ismKitPreview li {
+    list-style: none;
+    margin: 0;
+}
+.ism .ismKitStripes,
+.ism .ismKitHoops {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    z-index: 99;
+}
+.ism .ismCentreStripe {
+    position: relative;
+    top: 0;
+}
+.ism .ismKitHoops {
+    left: 5px;
+}
+.ism .ismSockHoops {
+    position: absolute;
+    top: 15px;
+    left: 0 ;
+    z-index: 99;
+}
+
+.ism .ismKitStripes .ismColorStripe {
+    background: transparent;
+    display: block;
+    float: left;
+    height: 110px;
+    width: 8px;
+}
+.ism .ismKitStripes .ismColorGap {
+    background: transparent;
+    display: block;
+    float: left;
+    height: 110px;
+    width: 8px;
+}
+.ism .ismKitHoops .ismColorHoop {
+    background: transparent;
+    display: block;
+    float: left;
+    clear: left;
+    height: 8px;
+    width: 90px;
+}
+.ism .ismKitHoops .ismColorGap {
+    background: transparent;
+    display: block;
+    float: left;
+    height: 8px;
+    width: 90px;
+}
+.ism .ismSockHoops .ismColorHoop {
+    background: transparent;
+    display: block;
+    float: left;
+    clear: left;
+    height: 5px;
+    width: 32px;
+}
+.ism .ismSockHoops .ismColorGap {
+    background: transparent;
+    display: block;
+    float: left;
+    height: 5px;
+    width: 32px;
+}
+.ism .ismKitSleeves {
+    position: absolute;
+    left: 0;
+    z-index: 100;
+}
+.ism .ismKitSleeves .ismColorSleeve {
+    background: transparent;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 19px;
+}
+.ism .ismKitSleeves .ismColorGap {
+    background: transparent;
+    display: block;
+    float: left;
+    height: 120px;
+    margin-right: 51px;
+    width: 1px;
+}
+/* The shirt */
+.ism .ismKitTheShirt {
+    background: #fff;
+    position: absolute;
+    width: 90px;
+    height: 130px;
+    overflow: hidden;
+    z-index: 100;
+}
+.ism .ismKitShirtCreases {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 151;
+}
+.ism .ismKitShirtOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 150;
+}
+
+/* The Shorts */
+.ism #ismKitShorts {
+    background: #fff;
+    position: absolute;
+    left: 95px;
+    width: 70px;
+    height: 130px;
+}
+.ism .ismKitTheShorts {
+    position: absolute;
+    width: 70px;
+    height: 130px;
+    overflow: hidden;
+    z-index: 100;
+}
+.ism .ismKitShortsCreases {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+}
+.ism .ismKitShortsOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+/* The Socks */
+.ism #ismKitSocks {
+    background: #fff;
+    position: absolute;
+    left: 165px;
+    width: 33px;
+    height: 130px;
+}
+.ism .ismKitTheSocks {
+    position: absolute;
+    width: 33px;
+    height: 130px;
+    overflow: hidden;
+    z-index: 100;
+}
+.ism .ismKitSocksCreases {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+}
+.ism .ismKitSocksOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* Color picker */
+.ism #mColorPicker {
+    background: #639ec8;
+    border: 1px solid #444;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 8px #888;
+    -moz-box-shadow: 0 0 8px #888;
+    box-shadow: 0 0 8px #888;
+    padding: 5px;
+}
+.ie7 .ism #mColorPicker {
+    behavior: url(/static/js/PIE.htc);
+}
+.ism  .ismKitDesigner .mColorPickerTrigger {
+    border: 1px solid #DBE9F2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+    margin-right: 10px;
+}
+.ism  .ismKitDesigner .mColorPickerTrigger {
+    behavior: url(/static/js/PIE.htc);
+}
+.ism  .ismKitDesigner #mColorPicker {
+    background: #333;
+    border: 1px solid #333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 3px;
+}
+.ism  .ismKitDesigner #mColorPicker {
+    behavior: url(/static/js/PIE.htc);
+}
+.ism #mColorPickerInput {
+    border: 1px solid #639ec8;
+    -webkit-box-shadow: 0 0 8px #888;
+    -moz-box-shadow: 0 0 8px #888;
+    box-shadow: 0 0 8px #888;
+}
+.ie7 .ism #mColorPickerInput {
+    behavior: url(/static/js/PIE.htc);
+}
+.ism  .ismKitDesigner #mColorPickerWrapper,
+.ism  .ismKitDesigner #mColorPickerImg {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shdow: 0 0 8px #888;
+}
+.ie7 .ism  .ismKitDesigner #mColorPickerImg {
+    behavior: url(/static/js/PIE.htc);
+}
+.ism  .ismKitDesigner #mColorPickerTransparent {
+    color: #444;
+    font-family: arial, sans-serif;
+}
+.ism  #mColorPickerFooter {
+    -webkit-box-shadow: 0 0 4px #888 inset;
+    -moz-box-shadow: 0 0 4px #888 inset;
+    box-shadow: 0 0 4px #888 inset;
+    behavior: url(/static/js/PIE.htc);
+}
+.ie7 .ism  #mColorPickerFooter {
+    behavior: url(/static/js/PIE.htc);
+}
+
+/* ========== */
+/* = dialog = */
+/* ========== */
+.ism .ismOpen {
+    cursor: pointer;
+}
+
+.ism .ismDialog {
+    background: #fff;
+}
+
+.js .ism .ismDialog {
+    display: none;
+    position: static;
+}
+/* ui-dialog overrides */
+.ui-dialog {
+    background: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 5px #888;
+    -o-box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 5px #888;
+    font-size: inherit;
+    padding: 0;
+    z-index: 9100;
+}
+.ie7 .ui-dialog {
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+.ism .ui-dialog-titlebar {
+    color: #fff;
+    background: #639ec8;
+    -webkit-border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+    padding: 10px;
+    margin-top: 0;
+}
+.ie7 .ism .ui-dialog-titlebar {
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+.ism .ui-dialog-content {
+    overflow: hidden;
+}
+.ie7 .ism .ui-dialog-content {
+    background: #fff;
+}
+.ism .ismDialog .inner {
+    padding: 0 10px 10px;
+}
+.ism .ismDialog h3 {
+    color: #fff;
+    background: #639ec8;
+    padding: 10px;
+    margin-top: 0;
+}
+.ism .ismDialog .ui-widget-header {
+    background: none;
+    border: 0px solid #999;
+}
+.ism .ismDialog .ui-widget-header,
+.ism .ismDialog .ui-widget-header .ui-state-hover {
+    border: 0px solid #999;
+}
+.ism .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    background: url(../img/eiw_close.png) no-repeat 0 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    height: 30px;
+    padding: 1px;
+    margin: -14px 0 0;
+    padding: 1px;
+    position: absolute;
+    right: 0.3em;
+    top: 50%;
+    width: 30px;
+    overflow: hidden;
+}
+.ism .ui-dialog-titlebar .ui-state-hover {
+    background: url(../img/eiw_close.png) no-repeat 0 0;
+    border: 0px solid #999;
+}
+.ism .ui-dialog-titlebar .ui-state-hover .ui-dialog-titlebar-close {
+    background: url(../img/eiw_close.png) no-repeat 0 0;
+    border: 0px solid #999;
+}
+
+.ism .ui-widget-header .ui-icon-closethick {
+    position: absolute;
+    background: none;
+    left: -50px;
+}
+.ism .ismDialog ul {
+    margin: 0;
+}
+.ism .ismDialog li a {
+    font-size: .8em;
+}
+.ism .ismDialog .ui-tabs-nav {
+    background: none;
+    border: none;
+    margin-bottom: 1px;
+    margin-top: 8px;
+}
+.ism .ismDialog .ismTabs .ui-tabs-selected {
+    border: none;
+    padding-bottom: 0px;
+}
+.ism .ismDialog .ismTabs .ui-tabs-selected a {
+    color: #fff;
+}
+.ism .ismDialog .ui-tabs-nav li {
+    margin: 0;
+    z-index: 20;
+}
+.ism .ismDialog .ui-tabs-panel {
+    border: 1px solid #e6e6e6;
+    margin-top: -1px;
+    padding: 10px;
+}
+.ism .ismDialog .ismBPLLogo {
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    z-index: 200;
+}
+.ism .ismDialog .ismPBEALogo {
+    clear: none;
+    float: left;
+    margin: 10px 0 0 49.9%;
+    text-align: right;
+    width: 50%;
+}
+.ism .ismDialog .ismPBEALogo img {
+    right: -10px;
+}
+.ism .ismDialog .ismSummaryWrapper {
+    margin-right: 10px;
+}
+.ism .ismDialog .ismEventSummaryWrapper {
+    margin-right: 5px;
+}
+.ism .ismDialog .ismMatchesWrapper {
+    margin-left: 5px;
+}
+.ism .ismDialog figure {
+    height: 159px;
+    width: 184px;
+}
+.ism .ismDialog figure img {
+    margin: 0 0 5px 13px;
+}
+.ism .ismDialog .ismPlayerSummary {
+    border: 3px solid #dbe9f2;
+    padding: 10px 0 0 0;
+}
+.ism .ismDialog .ismEiwName {
+    padding-left: 13px;
+}
+.ism .ismDialog .ismEiwTeam img {
+    height: 35px;
+    width: 35px;
+    vertical-align: middle;
+    margin: 0 5px 5px 13px;
+}
+.ism .ismDialog .ismEiwTeam span {
+    font-size: 11px;
+    color: #666;
+    font-weight: bold;
+}
+.ism .ismDialog .ismEiwNews {
+    border: 3px solid #dbe9f2;
+    padding: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+
+.ism .ismDialog h4,
+.ism .ismDialog h5 {
+    background: #dbe9f2;
+    color: #639ec8;
+    margin: 0;
+    padding: 5px;
+}
+.ism .ismDialog .ismH2 {
+    background: none;
+    margin-bottom: 10px;
+}
+.ism .ismDialog table {
+    border: 3px solid #dbe9f2;
+    font-size: .846em;
+    margin: 0 0 10px;
+}
+.ism .ismDialog caption {
+    font-size: 1.13em;
+}
+.ism .ismDialog th {
+    border-top: 1px solid #dbe9f2;
+    border-right: 1px solid #dbe9f2;
+    padding: 5px;
+}
+.ism .ismDialog td {
+    border-top: 1px solid #dbe9f2;
+    border-right: 1px solid #dbe9f2;
+    padding: 5px;
+}
+.ism .ismDialog tr td:last-child {
+    border-right: 0px solid #dbe9f2;
+}
+.ism .ismDialog dl {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-top: 1px solid #dbe9f2;
+}
+.ism .ismDialog dt {
+    display: block;
+    float: left;
+    font-size: .846em;
+    padding: 5px 0 5px 19px;
+    width: 45%;
+}
+.ism .ismDialog dd {
+    float: left;
+    clear: none;
+    font-size: .846em;
+    font-weight: bold;
+    padding: 5px 0;
+    vertical-align: baseline;
+    width: 45%;
+}
+.ism .ismDialog .ismStripe {
+    background-color: #F1F6FA;
+}
+.ism .ismDialog h5 + ul {
+    margin: 10px 0 10px 10px;
+}
+.ism .ismDialog h5 + ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.ism .ismEIWTabs {
+    position: static;
+}
+
+.ism .ismEiwWatchlistItem {
+    position: absolute;
+    top: 50px;
+    right: 23px;
+    width: auto;
+    padding-left: 10px;
+    z-index: 300;
+}
+.ie7 .ism .ismEiwWatchlistItem {
+    right: 25px;
+}
+.ism .ismWatchlistAdd {
+    background: #7eafd2 url(../img/icons/add-white.png) no-repeat 5px 5px;
+}
+
+.ism .ismWatchlistRemove {
+    background: #7eafd2 url(../img/icons/remove-white.png) no-repeat 5px 5px;
+}
+
+.ism .ismEiwWatchlistText {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.ism .ismDialog .ismTable tr:nth-child(even) {
+    background: #F1F6FA;
+}
+.ism .ismDialog .ismPlayerSummaryGWP {
+    clear: both;
+}
+.ism .ismUpcomingFixtures .ismTableCol1 {
+    width: 20%;
+}
+.ism .ismRecentGameweeks .ismTableCol1,
+.ism .ismRecentGameweeks .ismTableCol3 {
+    width: 15%;
+}
+.ism .ismRecentGameweeks .ismTableCol2 {
+    width: 30%;
+}
+
+.ism .ismRecentGameweeks .ismTableCol4 {
+    width: 30%;
+}
+.ism .ismUpcomingFixtures .ismTableCol2 {
+    width: 35%;
+}
+.ism .ismUpcomingFixtures .ismTableCol3 {
+    width: 45%;
+}
+.ism .ismEIWFixtures .ismTableCol1 {
+    width: 20%;
+}
+.ism .ismEIWFixtures .ismTableCol3 {
+    width: 60%;
+}
+.ism .ismEIWFixtures .ismTableCol2 {
+    width: 20%;
+}
+.ism .ismPlayerHistory .ismTableCol2 {
+    width: 5%;
+}
+.ism .ismPlayerHistory .ismTableCol3 {
+    width: 36%;
+}
+.ism .ismPlayerHistory .ismTableCol16 {
+    width: 5%;
+}
+.ism .ismPlayerHistory .ismTableCol17 {
+    width: 15%;
+}
+.ism .ismPlayerHistory .ismPointsTotal {
+    text-align: right;
+}
+.ism .ismPlayerHistory tfoot td {
+    font-weight: bold;
+}
+.ism .ismHistoryTotals td {
+    font-weight: bold;
+}
+.ism .ismHistoryPastSeasons {
+    border-top: 5px solid #DBE9F2;
+}
+.ism .ismHistoryPastSeasons tr {
+    border-top: 3px solid #DBE9F2;
+}
+
+/* Ultimate Promo */
+
+/* We don't want diagonal stripes on our modals so turn the image off */
+.ui-widget-overlay {
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Hack the header so we only show the close icon */
+.ism.ism-ultimate-promo .ui-dialog-titlebar {
+    display: none;
+}
+
+.ism.ism-ultimate-promo .ui-dialog-content {
+    position: relative;
+    margin: 15px;
+    padding: 0;
+    color: #262626;
+    background: #252527 url('../img/plu-promo-bg.png') no-repeat;
+    text-align: center;
+}
+
+.ism .ism-ultimate-promo__close {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    background-image: url('../img/close-red.png');
+    text-indent: -9999em;
+    text-align: left;
+}
+
+.ism .ism-ultimate-promo__header {
+    margin: 0 0 100px;
+    padding: 0;
+    border: 0;
+}
+
+.ism .ism-ultimate-promo__heading {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: PremierLeagueRegular, 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 22px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.ism .ism-ultimate-promo__heading--header {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    color: #3bf;
+}
+
+.ism h3.ism-ultimate-promo__heading--footer {
+    margin: 0 0 8px;
+    padding: 0 10px;
+    color: #fff;
+    background-color: transparent;
+}
+
+.ism .ism-ultimate-promo__copy {
+    margin-bottom: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.ism .ism-ultimate-promo__intro {
+    padding-bottom: 15px;
+    color: white;
+}
+
+.ism .ism-ultimate-promo__emphasis {
+    color: #3bf;
+    font-style: normal;
+}
+
+.ism .ism-ultimate-promo__list {
+    padding-top: 161px;
+    padding-bottom: 19px;
+    color: #262626;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: auto;
+}
+
+.ism .ism-ultimate-promo__list--left {
+    padding-right: 35px;
+    padding-left: 55px;
+    background: url('../img/plu-promo-squad.png') 55% top no-repeat;
+}
+
+.ism .ism-ultimate-promo__list--right {
+    padding-right: 45px;
+    padding-left: 25px;
+    background: url('../img/plu-promo-subs.png') 47% top no-repeat;
+}
+
+.ism .ism-ultimate-promo__list > li {
+    display: inline-block;
+}
+
+.ism .ism-ultimate-promo__list > li:before {
+    content:'\2022';
+    margin: 0 0.5em;
+}
+
+.ism .ism-ultimate-promo__footer {
+    position: relative;
+    margin-top: 12px;
+    padding: 8px 5px;
+    color: white;
+    background-color: #1a1a1a;
+}
+
+.ism .ism-ultimate-promo__social-link {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    color: #808080;
+    text-decoration: none;
+}
+
+.ism .ism-ultimate-promo__button {
+    display: block;
+    padding: 10px;
+    margin: 0 5px;
+    border-style: solid;
+    border-width: 0 0 2px;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.ism .ism-ultimate-promo__button--secondary {
+    border-color: #595959;
+    background-color: #828282;
+}
+
+.ism .ism-ultimate-promo__button--primary {
+    border-color: #2084b3;
+    background-color: #2ca7e2;
+}
+
+/* ======= */
+/* = RHS = */
+/* ======= */
+#ism .ismMod {
+    border: 4px solid #DBE9F2;
+    border-top: none;
+    margin: 10px 0 0;
+    font-size: 11px;
+}
+#ism .ismModHead {
+    background: #DBE9F2;
+    color: #639ec8;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    margin: 0;
+}
+
+#ism .ismModBody {
+    font-size: 11px;
+}
+
+#ism .ismModBody p {
+    padding: 5px;
+}
+
+#ism .ismModSection {
+    margin: 0 0 5px;
+}
+#ism .ismModSpace {
+    padding: 10px;
+}
+#ism .ismModFoot {
+    padding: 5px;
+}
+
+#ism .ismRHSText {
+    margin: 0;
+}
+
+#ism .ismRHSDefList {
+    margin: 0;
+}
+#ism .ismRHSDefList dt,
+#ism .ismRHSDefList dd {
+    margin: 0;
+    padding: 5px;
+    border-bottom: 1px solid #DBE9F2;
+}
+#ism .ismRHSDefList dt {
+    width: 59%;
+    border-right: 1px solid #DBE9F2;
+}
+#ism .ismRHSDefList dd {
+    font-weight: bold;
+    width: 30%;
+}
+#ism .ismRHSTFList dt {
+    width: 55%;
+}
+#ism .ismRHSTFList dd {
+    position: relative;
+    width: 34%;
+}
+#ism .ismRHSFinanceList {
+    border-top: 1px solid #DBE9F2;
+}
+
+#ism .ismSupports .ismModBody {
+    text-align: center;
+}
+
+#ism .ismRHSBadge {
+    padding: 1px;
+    height: 55px;
+    width: 55px;
+}
+
+#ism .ismNat {
+    padding: 1px;
+    height: 32px;
+    width: 53px;
+}
+
+#ism .ismLeagueTable {
+    border: 3px solid #dbe9f2;
+    border-top: 0px solid #dbe9f2;
+    margin: 0 0 10px;
+}
+
+/* Using this on tables is a bit hacky - we should be using caption but at the moment it's too buggy */
+#ism .ismTableHeading,
+.ism .ismTableHeading {
+    background: #DBE9F2;
+    border: none;
+    margin: 10px 0 0;
+    padding: 5px;
+}
+
+#ism .ismLeagueTable .ismCol1 {
+    width: 10%;
+}
+
+.ie7 #ism .ismLeagueTable thead {
+    display: none;
+}
+
+#ism .ismLeagueTable thead th,
+#ism .ismLeagueTable thead td {
+    background: #f3f8fb;
+    border: none;
+    border-right: 1px solid #dbe9f2;
+    border-bottom: 1px solid #dbe9f2;
+    color: #639ec8;
+    padding: 5px;
+}
+#ism .ismLeagueTable thead th:last-child {
+    border-right: none;
+}
+#ism .ismLeagueTable td {
+    border-right: 1px solid #dbe9f2;
+    border-bottom: 1px solid #dbe9f2;
+}
+#ism .ismLeagueTable td:first-child,
+#ism .ismLeagueTable td:last-child {
+    border-right: 0px solid #dbe9f2;
+}
+#ism .ismLeagueTable td:nth-child(3) {
+    border-right: 1px solid #dbe9f2;
+    border-bottom: 1px solid #dbe9f2;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* ============ */
+/* = fixtures = */
+/* ============ */
+#ism .ismFixturesTable {
+    border: none;
+    margin: 20px 0 0;
+}
+#ism .ismFixturesTable caption {
+    background: #dbe9f2 url(../img/bpl-logo-small.png) no-repeat 99% 45%;
+}
+/*#ism .ismLeagueTable .ismHideContent,
+#ism .ismFixturesTable .ismHideContent {
+    overflow: hidden;
+    position: absolute;
+}*/
+
+.ie7 #ism .ismFixturesTable thead {
+    display: none;
+}
+
+#ism .ismHideTableHeadings {
+    overflow: hidden;
+    position: absolute;
+}
+
+#ism .ismStatsOpen {
+    -webkit-box-shadow: 0 2px 2px #CBCBCB;
+    -moz-box-shadow: 0 2px 2px #CBCBCB;
+    box-shadow: 0 2px 2px #CBCBCB;
+}
+.ie7 #ism .ismStatsOpen {
+    behavior: url(/static/plfpl/js/PIE.htc);
+    zoom: 1;
+}
+#ism .ismFixturesTable .ismTableCol1 {
+    width: 20%;
+}
+#ism .ismFixturesTable .ismTableCol2 {
+    width: 25%;
+}
+#ism .ismFixturesTable .ismTableCol3 {
+    width: 9%;
+}
+#ism .ismFixturesTable .ismTableCol4 {
+    width: 12%;
+}
+#ism .ismFixturesTable .ismTableCol5 {
+    width: 9%;
+}
+#ism .ismFixturesTable .ismTableCol6 {
+    width: 25%;
+}
+
+#ism .ismFixturesTable td {
+    padding: 0 5px;
+}
+
+/* cell columns */
+#ism .ismFixturesTable .ismCol2 {
+    text-align: right;
+}
+#ism .ismFixturesTable .ismCol4 {
+    text-align: center;
+}
+#ism .ismFixturesTable .ismCol2,
+#ism .ismFixturesTable .ismCol4,
+#ism .ismFixturesTable .ismCol6 {
+    font-weight: bold;
+}
+#ism .ismTeamHome {
+    font-weight: bold;
+    text-align: right;
+}
+#ism .ismTeamAway {
+    font-weight: bold;
+    text-align: left;
+}
+#ism .ismFixtureStatus {
+    position: relative;
+    text-align: center;
+}
+#ism .ismTeamBadge {
+    text-align: center;
+}
+#ism .ismOdd + .ismFixtureStats {
+    background: #fff;
+}
+#ism .ismEven + .ismFixtureStats {
+    background: #f1f6fa;
+}
+#ism .ismStatsOpen {
+}
+#ism .ismStatsOpen + .ismFixtureStats {
+    border: 1px solid #f1f6fa;
+    border-top: none;
+}
+#ism .ismFixtureStats td {
+    padding: 0;
+}
+.js #ism .ismFixtureOverview {
+   display: none;
+}
+#ism .ismInner {
+    padding: 15px;
+}
+#ism .ismTeamHomeOverview {
+    margin-top: 0;
+}
+#ism .ismTeamAwayOverview {}
+#ism .ismFixtureOverview dt {
+    margin-top: 10px;
+}
+#ism .ismFixtureOverview dd {
+    display: inline;
+}
+#ism .ismFixtureOverview dd:before {
+    content: ', ';
+}
+#ism .ismFixtureOverview dt + dd:before {
+    content: '';
+}
+#ism .ismFixtureOverview dl + a {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+    width: auto;
+}
+#ism .ismPagPrev {
+    float: left;
+}
+#ism .ismPagNext {
+    float: right;
+}
+#ism .ismPagNext:after {
+    content: ' »';
+}
+#ism .ismPagPrev:before {
+    content: '« ';
+}
+
+#ism .ismBadge {
+    display: block;
+    margin: auto;
+    padding: 3px;
+    height: 24px;
+    width: 24px;
+}
+
+/* fixture table */
+.ism .ismFixtureContainer {
+    margin: 20px 0;
+}
+
+.ism .ismFixtureTable {
+    border: 1px solid #dbe9f2;
+    width: 100%;
+}
+
+.ism .ismFixtureTable caption {
+   background: url(../img/bpl-logo-small.png) no-repeat 99% 45% #dbe9f2;
+}
+
+.ism .ismFixtureTable .ismCol1 {
+    width: 20%;
+}
+
+.ism .ismFixtureTable .ismCol2 {
+    width: 25%;
+}
+
+.ism .ismFixtureTable .ismCol3 {
+    width: 9%;
+}
+
+.ism .ismFixtureTable .ismCol4 {
+    width: 12%;
+}
+
+.ism .ismFixtureTable .ismCol5 {
+    width: 9%;
+}
+
+.ism .ismFixtureTable .ismCol6 {
+    width: 25%;
+}
+
+.ism .ismFixtureTable th {
+    text-align: left;
+}
+
+.ism .ismFixtureTable tbody {
+    border-top: 2px solid #fff;
+}
+
+.ism .ismFixtureTable td {
+    border-top: 1px solid #dbe9f2;
+    border-right: 1px solid #dbe9f2;
+    color: #444;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+.ism .ismFixtureTable .ismResult:hover {
+    background: #d7e6f1;
+    cursor: pointer;
+}
+
+.ism .ismFixtureTable .ismFixtureSummary td {
+    border: none;
+}
+
+.ism .ismFixtureTable .ismSummaryWrapper {
+    display: none;
+}
+
+.ism .ismFixtureTable .ismEven {
+    background: #F1F6FA;
+}
+
+.ism .ismFixtureTable .ismHomeTeam,
+.ism .ismFixtureTable .ismAwayTeam {
+    font-weight: bold;
+}
+
+.ism .ismFixtureTable .ismHomeTeam {
+    text-align: right;
+}
+
+.ism .ismFixtureTable .ismScore {
+    text-align: center;
+}
+
+.ism .ismSummary {
+    margin: 10px 0;
+}
+
+.ism .ismSummary dt{
+    color: #639ec8;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+.ism .ismHomeSummary {
+    text-align: right;
+    margin-right: 20%;
+}
+
+.ism .ismDetailLink {
+    float: right;
+    font-size: 84.6%;
+    padding: 10px;
+}
+
+.ism .ismOpenFixture td {
+    background: #d7e6f1;
+}
+
+/* fixture detail */
+.ism .ismFixtureDetail {
+    display: none;
+}
+
+.ism .ismFixtureDetailTable tbody {
+    border-bottom: 1px solid #dbe9f2;
+}
+
+/* ================== */
+/* = Matches tables = */
+/* ================== */
+.ism .ismMatchesTable tr,
+.ism .ismH2HFixTable tr {
+    border-bottom: 1px solid #dbe9f2;
+}
+.ism .ismMatchesTable th,
+.ism .ismH2HFixTable th {
+    border-right: 0px solid #dbe9f2;
+    text-align: left;
+}
+.ism .ismMatchesTable td,
+.ism .ismH2HFixTable td {
+    border-right: 1px solid #dbe9f2;
+    text-align: center;
+    width: 5%;
+}
+.ism .ismMatchesTable .ismHome,
+.ism .ismH2HFixTable .ismHome {
+    text-align: right;
+    width: 37%;
+}
+.ism .ismMatchesTable .ismAway,
+.ism .ismH2HFixTable .ismAway {
+    text-align: left;
+    width: 37%;
+}
+.ism .ismMatchesTable .ismFixRes {
+    width: 15%;
+}
+.ism .ismMatchesTable .ismMatchRound {
+    border-right: 0px solid #dbe9f2;
+}
+#ism .ismMatchesTable tr.ismFixtureSummary,
+#ism .ismH2HFixTable tr.ismFixtureSummary {
+    background: #fff;
+}
+#ism .ismMatchesTable tr.ismFixtureSummary td,
+#ism .ismH2HFixTable tr.ismFixtureSummary td {
+    border: 0px solid #ececea;
+    padding: 0;
+}
+
+#ism .ismH2HMatchSummary li {
+    background: #f1f6fa;
+    border-right: 1px solid #dbe9f2;
+    border-left: 1px solid #dbe9f2;
+    color: #777;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    font-style: italic;
+    width: 50%;
+}
+
+
+/* =================== */
+/* = squad selection = */
+/* =================== */
+#ism .ismTeamNameText {
+    font-size: 12px;
+}
+
+#ism .ismList .ismChooseTeamName {
+    margin-bottom: 25px;
+}
+#ism .ismChooseTeamName label {
+    color: #050528;
+    display: inline;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 5px 10px 0 0;
+    text-transform: uppercase;
+}
+#ism .ismChooseTeamName input {
+    float: none;
+}
+/* player filter */
+#ism .ismPanel {
+    background: #181838;
+    margin: 0 0 10px;
+    overflow: hidden;
+}
+#ism .ismPanel h2 {
+    border-color: #fff;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 10px;
+}
+#ism .ismPanel .ismFilterList {
+    margin: 0;
+    padding: 0 10px;
+}
+.ism .ismFilterList .ismOptionMisc {
+    background-color: #ccc;
+    border-top: 1px solid #999;
+}
+
+.ism .ismFilterList .ismOptionType {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    color: #444;
+}
+
+.ism .ismFilterList .ismOptionTeam {
+    background-color: #555;
+    border-top: 1px solid #777;
+    color: #fff;
+}
+#ism .ismPanel label {
+    color: #fff;
+}
+#ism .ismPanel select {
+    padding: 2px;
+}
+
+#ism .ismPanelFoot {
+    background: #ced3d7;
+    padding: 5px;
+}
+
+/* player list */
+#ism .ismPlayerList {
+    background: #fff;
+    border: 3px solid #dbe9f2;
+    border-top: none;
+    margin: 0;
+}
+#ism .ismPlayerList .ismPLInfo {
+    width: 10%;
+}
+#ism .ismPlayerList .ismPLName {
+    width: 40%;
+}
+#ism .ismPlayerList .ismPLTeam {
+    width: 16%;
+}
+#ism .ismPlayerList .ismPLPrice {
+    width: 16%;
+}
+#ism .ismPlayerList .ismPLValue {
+    width: 16%;
+}
+#ism .ismPlayerList th {
+    background: #dbe9f2;
+    border-right: 1px solid #fff;
+    color: #679db9;
+    font-size: 85%;
+    margin: 0;
+    padding: 3px 5px;
+}
+#ism .ismPlayerList th:first-child a {
+    font-size: 12px;
+    color: #050528;
+}
+#ism .ismPlayerList th:first-child a:before {
+    color: #679db9;
+    content: '» ';
+}
+#ism .ismPlayerList tr td:first-child {
+    text-align: left;
+}
+#ism .ismPlayerList td {
+    border-right: 1px solid #dbe9f2;
+    border-bottom: 1px solid #dbe9f2;
+    padding: 2px 3px;
+}
+
+#ism .ismPlayerList td,
+#ism .ismPlayerList td a {
+    font-size: 11px;
+}
+
+#ism .ismChosen td,
+#ism .ismChosen td a {
+    color: #999;
+}
+
+/* ================== */
+/* = PL promo intro = */
+/* ================== */
+#ism .ismPLBanner {
+    position: relative;
+    /*background: url(../img/pl-banner.jpg) no-repeat 0 0;*/
+    background: #181737;
+    color: #fff;
+    margin: 20px 0 0;
+    padding: 20px;
+    height: 143px;
+}
+#ism .ismPLBanner h2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 0px dotted #fff;
+    color: #fff;
+    width: 290px;
+    height: 42px;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: normal;
+}
+#ism .ismPLBanner h2 + p {
+    color: #fff;
+    margin: 65px 0 18px;
+    width: 325px;
+}
+.ie7 #ism .ismPLBanner h2 + p {
+    float: left;
+}
+#ism .ismPLBanner a {
+    color: #fff;
+    text-decoration: underline;
+}
+#ism .ismCallsToAction {
+    margin-bottom: 0;
+}
+.ie7 #ism .ismCallsToAction {
+    clear: left;
+    float: left;
+}
+#ism .ismCallsToAction a {
+    text-decoration: none;
+}
+#ism .ismCallsToAction a:before {
+    color: #8cbde0;
+    content: '» ';
+}
+#ism .ismCallsToAction .ismButton {
+    background: #e90736;
+    margin-right: 10px;
+}
+#ism .ismCallsToAction .ismButton:before {
+    content: '';
+}
+
+/* Game banner */
+
+.ism .ism-hero {
+    position: relative;
+    padding-top: 210px;
+    margin-top: 5px;
+}
+
+.ism .ism-hero__video {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
+
+.ism .ism-hero__header {
+    padding: 0 30px;
+}
+
+.ism .ism-hero__fpl {
+    float: left;
+    width: 460px;
+}
+
+#ism .ism-hero__heading {
+    padding: 14px 0 0;
+    border-bottom: none;
+    margin: 0;
+    line-height: 1;
+    font-size: 30px;
+    font-weight: normal;
+    color: #fff;
+}
+
+#ism .ism-hero__sub-heading {
+    padding-top: 2px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    color: #b2b2b2;
+}
+
+.ism .ism-hero__sponsor {
+    float: right;
+    width: 190px;
+    text-align: right;
+}
+
+#ism .ism-hero__sponsor-text {
+    padding-left: 14px;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: #fff;
+}
+
+.ism .ism-hero__logo {
+    vertical-align: middle;
+}
+
+.ism .ism-hero__copy {
+    float: left;
+    width: 520px;
+}
+
+#ism .ism-hero__copy > p {
+    padding: 0 5px 0 30px;
+    margin: 20px 0 0;
+    color: #fff;
+}
+
+#ism .ism-hero__link {
+    font-size: inherit;
+    text-decoration: underline;
+    color: #fff;
+}
+
+.ism-hero__cta-wrapper {
+    float: left;
+    width: 190px;
+}
+
+#ism .ism-hero__cta {
+    float: right;
+    min-width: 140px;
+    margin: 20px 30px 21px 0;
+    font-size: 13px;
+    vertical-align: middle;
+    background: #e90736;
+}
+
+#ism .ism-hero__cta > .ui-button-text {
+    line-height: 1;
+    padding: 9px 10px;
+}
+
+.ism .ism-hero--promo {
+    display: block;
+    height: 160px;
+    margin-top: 20px;
+    background: url("../img//hero-promo.jpg") center top no-repeat;
+}
+
+    #ism .ism-hero--promo__heading {
+        border: none;
+    }
+
+/* Language selection bar */
+.ism .ism-lang-bar {
+    padding: 0 10px;
+    background-color: #f2f2f4;
+}
+
+.ism .ism-lang-bar__header {
+    float: left;
+    width: 126px;
+}
+
+#ism .ism-lang-bar__heading {
+    padding: 10px 0;
+    border-bottom: none;
+    margin: 0;
+    font-size: 12px;
+    color: #81bde2;
+}
+
+.ism .ism-lang-bar__body {
+    float: left;
+    width: 554px;
+}
+
+.ism .ism-lang-bar__list {
+    color: #fff;
+}
+
+.ism .ism-lang-bar__list > li {
+    padding: 10px 0;
+    margin-left: 19px;
+    font-size: 12px;
+}
+
+#ism .ism-lang-bar__list > li > a {
+    font-size: inherit;
+    color: #050528;
+}
+
+/* =========================== */
+/* = Three step for homepage = */
+/* =========================== */
+#ism .ismThreeStep {
+    margin: 20px 0;
+}
+
+#ism .ismStep {
+    background: #f1f1f3;
+}
+
+#ism .ismStepContent {
+    padding: 10px;
+}
+
+#ism .ismStep1 {
+    margin: 0 10px 0 0;
+}
+
+#ism .ismStep2 {
+    margin: 0 5px;
+}
+
+#ism .ismStep3 {
+    margin: 0 0 0 10px;
+}
+
+#ism .ismStepHeading {
+    border: 0px solid #444;
+    color: #444;
+    margin: 0 0 5px;
+    padding: 0;
+}
+#ism .ismGameExtraContent {
+    margin: 0 0 10px;
+}
+#ism .ismGameExtra .ismInner {
+    margin: 0 30px 0 0;
+    padding: 0;
+}
+#ism .ismGameExtra .ismUnit:last-child .ismInner {
+    margin-right: 0;
+}
+
+#ism .ismGameExtraContent {
+    border-bottom: 1px dotted #666;
+    padding-bottom: 15px;
+}
+
+#ism .ismGameExtraContent p {
+    margin: 0;
+}
+
+#ism .ismGameExtraContent + p {
+    margin: 10px 0;
+}
+#ism .ismGameExtraContent p a {
+    color: #666;
+}
+#ism .ismLatestNews {
+    margin: 0;
+}
+#ism .ismLatestNews h2 {
+    border: 0px dotted #444;
+    font-size: 120%;
+}
+#ism .ismLatestNews ul {
+    float: left;
+    margin-right: 20px;
+    width: 48.5%;
+}
+#ism .ismLatestNews ul + ul {
+    margin-right: 0;
+}
+#ism .ismLatestNews li {
+    border-top: 1px dotted #444;
+    padding: 10px 0;
+}
+#ism .ismLatestNews ul li:last-child {
+    border-bottom: 1px dotted #444;
+}
+#ism .ismLatestNews li a {
+    font-size: 110%;
+    font-weight: bold;
+}
+#ism .ismLatestNews ul + .ismMoreLink {
+    display: inline-block;
+    font-size: 83%;
+    margin: 20px 0;
+}
+#ism .ismInAssocWith {
+    border-top: 1px dotted #444;
+    color: #639EC8;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 20px 0 0;
+}
+#ism .ismInAssocWith span {
+    display: inline-block;
+    float: right;
+}
+.ie7 #ism .ismInAssocWith span {
+    margin: -20px 0 0;
+}
+
+/* ============== */
+/* = Game rules = */
+/* ============== */
+#ism .ismHelpHead {
+    height: 2px;
+}
+#ism .ismHelpSection {
+    border-top: 2px solid #050528;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+#ismRules h2 {
+    border: 0px dotted #fff;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+#ism .ismFAQCol {
+    padding: 0 20px;
+}
+#ism .ismFAQCol1 {
+    border-right: 1px dotted #999;
+}
+#ism .ismFAQList {
+    margin-bottom: 30px;
+}
+#ism .ismQuestion {
+    color: #050528;
+    margin: 6px 0;
+    cursor: pointer;
+}
+#ism .ismQuestionActive {
+    font-weight: bold;
+}
+#ism .ismAnswerWrapper {
+    padding: 6px;
+    background-color: #dedede;
+}
+#ism .ismAnswer {
+    color: #000;
+}
+#ism .ismAnswer a {
+    text-decoration: underline;
+}
+#ism .ismSupportForm dt {
+    margin-bottom: 3px;
+}
+#ism .ismSupportForm dd {
+    margin-bottom: 12px;
+}
+#ism .ismSupportForm input[type=text] {
+    width: 400px;
+}
+#ism .ismSupportForm textarea {
+    width: 600px;
+    height: 200px;
+}
+
+/* ==================== */
+/* = jQuery UI resets = */
+/* ==================== */
+
+/* here is where we reset some jQuery UI defaults and override some of VML's jQuery UI properties */
+
+/* kill all jQuery UI rounded corners */
+.ism .ui-corner-top,
+.ism .ui-corner-all,
+#ism .ui-corner-top,
+#ism .ui-corner-all {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.ism .ui-widget,
+#ism .ui-widget {
+    font-family: inherit;
+}
+
+.ism .ui-widget,
+#ism .ui-widget,
+.ism .ui-widget input,
+.ism .ui-widget select,
+.ism .ui-widget textarea,
+#ism .ui-widget input,
+#ism .ui-widget select,
+#ism .ui-widget textarea {
+    font-family: inherit;
+}
+
+/* ================= */
+/* = Funky selects = */
+/* ================= */
+#ism select.ismSelectMenu {
+    width: 80%;
+}
+/* Styles the actual select area */
+#ism .ui-selectmenu.ismSelectMenu,
+#ism .ui-widget.ismSelectMenu {
+    background: #fff;
+    border: 1px solid #D3D3D3;
+    border-radius: 0px;
+    color: #888888;
+    height: 26px;
+    padding: 0;
+}
+/* styles the main bit of the select */
+.ism .ui-selectmenu .ui-selectmenu-status {
+    background: #f2f2f2;
+    box-shadow: none;
+    font-weight: normal;
+    height: 17px;
+    text-align: center;
+}
+/* wrapping the selects options when open */
+.ism .ui-selectmenu-open .ismSelectMenu {
+    border-radius: 0 4px 4px 4px;
+}
+/* the select options */
+.ism .ui-selectmenu-open .ui-selectmenu-menu li a,
+.ism .ui-selectmenu-open .ui-selectmenu-status {
+    line-height: 1.4em;
+    padding: 3px 2.1em 3px 1em;
+    text-decoration: none;
+}
+/* the little arrow, when the select has focus */
+.ism .ui-selectmenu.ui-state-default:focus .ui-icon {
+    background-image: url("images/ui-icons_404040_256x240.png");
+    background-position: -64px -16px;
+}
+/* the arrows hover state */
+.ism .ui-selectmenu.ui-state-default:hover .ui-icon {
+    background-image: url("images/ui-icons_404040_256x240.png");
+    background-position: 0 -16px;
+}
+/* when the select is open and in use */
+.ism .ui-selectmenu.ui-state-active .ui-icon {
+    background-image: url("images/ui-icons_404040_256x240.png");
+    background-position: 0 -16px;
+}
+.ism .ui-selectmenu-open .ui-selectmenu-item-selected {
+}
+/* Give the currently selected item some style &*/
+.ism .ui-selectmenu-open .ui-selectmenu-item-selected a {
+    background: #777;
+    color: #fff;
+    border: 0;
+}
+.ism .ui-selectmenu-menu-dropdown a {
+    text-align: left;
+}
+
+/* =========== */
+/* = Leagues = */
+/* =========== */
+
+.js .ism .ismSlide {
+    display: none;
+}
+
+/* private classic leagues */
+.ism .ismPrivClassicLeague .ismCol1,
+.ism .ismPrivH2HLeague .ismCol1,
+.ism .ismPubClassicLeague .ismCol1,
+.ism .ismPubH2HLeague .ismCol1 {
+    width: 25%;
+}
+
+.ism .ismPrivClassicLeague .ismCol2,
+.ism .ismPrivH2HLeague .ismCol2,
+.ism .ismPubClassicLeague .ismCol2,
+.ism .ismPubH2HLeague .ismCol2 {
+    width: 20%;
+}
+
+.ism .ismPrivClassicLeague .ismCol3,
+.ism .ismPrivH2HLeague .ismCol3,
+.ism .ismPubClassicLeague .ismCol3,
+.ism .ismPubH2HLeague .ismCol3 {
+    width: 20%;
+}
+
+.ism .ismPrivClassicLeague .ismCol4,
+.ism .ismPrivH2HLeague .ismCol4,
+.ism .ismPubClassicLeague .ismCol4,
+.ism .ismPubH2HLeague .ismCol4 {
+    width: 20%;
+}
+
+.ism .ismPrivClassicLeague .ismCol5,
+.ism .ismPrivH2HLeague .ismCol5,
+.ism .ismPubClassicLeague .ismCol5,
+.ism .ismPubH2HLeague .ismCol5 {
+    width: 5%;
+}
+
+.ism .ismPrivClassicLeague .ismCol6,
+.ism .ismPrivH2HLeague .ismCol6,
+.ism .ismPubClassicLeague .ismCol6,
+.ism .ismPubH2HLeague .ismCol6 {
+    width: 5%;
+}
+
+.ism .ismPrivClassicLeague .ismCol7,
+.ism .ismPrivH2HLeague .ismCol7,
+.ism .ismPubClassicLeague .ismCol7,
+.ism .ismPubH2HLeague .ismCol7 {
+    width: 5%;
+}
+
+#ism .ismTable .ismRowHl td,
+.ism .ismTable .ismRowHl td,
+#ism .ismTable .ismRowHl td a,
+.ism .ismTable .ismRowHl td a {
+    background: #8cbde0;
+    color: #fff;
+}
+.ism table + .ismForm {
+    margin-top: 10px;
+}
+.ism .ismRenewLeagues {
+    /*background: url(../img/icons/renew.png) no-repeat 0 2px;*/
+    padding: 0 0 0 15px;
+}
+.ism .ismJoinLeague {
+    /*background: url(../img/icons/add.png) no-repeat 0 2px;*/
+    padding: 0 0 0 15px;
+}
+.ism .ismCreateLeague {
+    /*background: url(../img/icons/create-league.png) no-repeat 0 2px;*/
+    padding: 0 0 0 15px;
+}
+#ism .ismMyLeague {
+    background: #050528;
+    border: 0px solid #fff;
+    color: #fff;
+    font-size: 13px;
+    margin: 0;
+    padding: 13px 10px;
+}
+#ism .ismLeagueActions {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+#ism .ismLeagueActions li div {
+    border-left: 1px solid #ccc;
+    position: relative;
+    height: 58px;
+    background: #c0c0c0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c0c0c0 0%, #999999 40%, #666666 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c0c0c0), color-stop(40%,#999999), color-stop(100%,#666666)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c0c0c0 0%,#999999 40%,#666666 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #c0c0c0 0%,#999999 40%,#666666 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #c0c0c0 0%,#999999 40%,#666666 100%); /* IE10+ */
+    background: linear-gradient(top,  #c0c0c0 0%,#999999 40%,#666666 100%); /* W3C */
+}
+
+#ism .ismLeagueActions li div {
+   -pie-background: linear-gradient(#c0c0c0, #666666); /*PIE*/
+   behavior: url(/static/js/PIE.htc);
+}
+
+#ism .ismLeagueActions a {
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 300;
+}
+
+#ism .ismLeagueActions li:first-child a {
+    border-left: none;
+}
+
+#ism .ismLeagueActions .ismDisabled {
+    color: #999;
+    cursor: default;
+    padding: 20px 0 19px;
+    text-decoration: none;
+    background: #eeeeee; /* Old browsers */
+    background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* IE10+ */
+    background: linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* W3C */
+}
+
+#ism .ismLeagueActions .ismDisabled {
+   -pie-background: linear-gradient(#eeeeee, #cccccc); /*PIE*/
+   behavior: url(/static/js/PIE.htc);
+}
+
+#ism .ismLeagueActions .ismIsActive {
+    background: #504e66; /* Old browsers */
+    background: -moz-linear-gradient(top,  #504e66 0%, #181737 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#504e66), color-stop(100%,#181737)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #504e66 0%,#181737 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #504e66 0%,#181737 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #504e66 0%,#181737 100%); /* IE10+ */
+    background: linear-gradient(top,  #504e66 0%,#181737 100%); /* W3C */
+}
+
+#ism .ismLeagueActions .ismIsActive {
+   -pie-background: linear-gradient(#504e66, #181737); /*PIE*/
+   behavior: url(/static/js/PIE.htc);
+}
+
+#ism .ismLeagueActions .ismIsActive a {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 30px;
+    background: url(../img/triangle-1B1A39.png) center 98% no-repeat;
+}
+.ism .ui-widget-overlay {
+    background: #333;
+    opacity: .5;
+}
+.ism .ismWizard {
+   height: 100%;
+   margin-top: 25px;
+}
+.ism .ismWizardWrapper {
+    position: relative;
+    border: 1px solid #1b1a39;
+    margin: 0 0 20px;
+    padding: 10px;
+}
+
+.ism .ismWizardList {
+    margin: 20px 0;
+}
+
+.ism .ismRadioHelp {
+    float: left;
+    width: 50%;
+}
+
+.ism .ismWizard .ui-widget-content {
+    background: none;
+    border: none;
+}
+
+.ism .ismWizard .wijmo-wijwizard-panel {
+    margin: 0 0 20px;
+}
+
+.ism .ismWizard .ismUnit {
+    border: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 49.5%;
+}
+#ism .ismWizard .ismUnit h4 {
+    background: #F1F6FA;
+    border: 1px solid #DBE9F2;
+    padding: 10px;
+    margin: 0;
+}
+#ism .ismWizard .ismUnit.ui-priority-primary h4 {
+    background: #639EC8;
+    border: 1px solid #DBE9F2;
+    color: #fff;
+    padding: 10px;
+}
+.ism .ismWizard h4 span {
+    display: inline-block;
+    float: left;
+    font-size: 2.5em;
+    margin: -5px 10px 0 0;
+}
+.ism .ismWizard h5 {
+    clear: left;
+    margin-bottom: 10px;
+}
+.ism .ismWizard .ismLeaguesActioned p {
+    margin-bottom: 10px;
+}
+.ism .ismWizard li {
+    list-style: none;
+}
+.ism .ismWizard .ismLeaguesActioned ul {
+    margin: 15px 0;
+}
+.ism .ismWizard .ismLeaguesActioned li {
+    color: #777;
+}
+.ism .ismWizard fieldset {
+    margin-bottom: 0;
+}
+.ism .ismWizard fieldset li {
+    list-style: none;
+    float: left;
+    width: 100%;
+}
+.ism .ismWizard .ismYourLeagues {
+    margin-bottom: 50px;
+}
+.ism .ismWizard .ismYourLeagues li {
+    border-top: 1px solid #ccc;
+    margin-bottom: 0;
+    padding: 5px 0 0;
+}
+.ism .ismWizard .ismYourLeagues li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+.ism .ismWizard .ismYourLeagues li:nth-child(even) {
+    background: #EFEFEF;
+}
+.ism .ismWizard fieldset li span {
+    display: inline-block;
+    float: left;
+    width: 40%;
+}
+.ism .ismWizard fieldset li h5 {
+    background: transparent;
+    color: #777;
+    float: left;
+    width: 50%;
+}
+.ism .ismWizard fieldset li ul {
+    display: inline-block;
+    margin: 5px 0 0;
+    width: 45%;
+}
+.ism .ismWizard .ismYourLeagues li li {
+    border: 0px solid #DBE9F2;
+    display: inline-block;
+    padding: 0;
+    width: 50%;
+}
+.ism .ismWizard .ismYourLeagues li li:last-child {
+    background: none;
+    border: 0px solid #DBE9F2;
+}
+.ism .ismWizard p:last-child > input[type=submit] {
+    margin: 0 0 50px;
+    clear: both;
+    float: left;
+}
+.ism .ismLeaguesActioned p:last-child {
+    margin-top: 25px;
+}
+
+.ism textarea + p {
+    margin-top: 25px;
+}
+.ism .ismWizard select {
+    float: left;
+    font: inherit;
+    clear: left;
+}
+#ism .ismYourLeagueCode {
+    background: #DBE9F2;
+    color: #679DB9;
+    font-size: 123.1%;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #aaa;
+    padding: 10px;
+    margin: 10px 0;
+}
+/*
+ * This is here so the Facebook share popup can be seen on the league
+ * invite page. Please leave it here
+ */
+#ismLeagueInvite {
+    min-height: 1000px;
+}
+.ism .ismDialog .wijmo-wijwizard-buttons {
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: right;
+    bottom: 10px;
+    right: 0;
+    width: auto;
+}
+.ism .ismDialog .wijmo-wijwizard-buttons a {
+    margin-left: 5px;
+}
+
+/* ============== */
+/* = dream team = */
+/* ============== */
+
+/* dream team styles */
+
+/* round nav */
+#ism .ismRoundNav li {
+    background: #e9e9e9; /* Old browsers */
+    background: -moz-linear-gradient(top, #e9e9e9 0%, #d5d5d5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e9e9e9), color-stop(100%,#d5d5d5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e9e9e9 0%,#d5d5d5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e9e9e9 0%,#d5d5d5 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #e9e9e9 0%,#d5d5d5 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9e9e9', endColorstr='#d5d5d5',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #e9e9e9 0%,#d5d5d5 100%); /* W3C */
+    border-right: 1px dotted #999;
+    padding: 5px;
+    float: left;
+    width: 160px;
+}
+
+#ism .ismRNHeading {
+    background: #050528;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 92.3%;
+    padding: 3px;
+    margin: 0 0 5px;
+}
+
+#ism .ismRNpts {
+    font-size: 107.69%;
+    margin: 0 0 10px;
+}
+
+#ism .ismRNSubHeading {
+    margin: 0 0 5px;
+    font-size: 84.6%;
+}
+
+#ism .ismPOTW {
+    margin: 0 0 5px;
+    font-size: 92.3%;
+}
+
+/* current round*/
+#ism .ismRoundNav .ismRNCurrent {
+    background: #4e4e66; /* Old browsers */
+    background: -moz-linear-gradient(top, #4e4e66 0%, #181838 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4e4e66), color-stop(100%,#181838)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #4e4e66 0%,#181838 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #4e4e66 0%,#181838 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #4e4e66 0%,#181838 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4e66', endColorstr='#181838',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #4e4e66 0%,#181838 100%); /* W3C */
+}
+
+#ism .ismRNCurrent .ismRNHeading {
+    background: #fff;
+    color: #050528;
+}
+
+#ism .ismRNCurrent .ismMoreLink {
+    color: #fff;
+}
+
+#ism .ismRNCurrent .ismRNSubHeading {
+    color: #ccc;
+}
+
+/* jCarousel skin styles*/
+.jcarousel-skin-ismRoundNavWide {
+    margin: 10px 0 20px;
+}
+.jcarousel-skin-ismRoundNavWide .jcarousel-container-horizontal {
+    height: 100px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.jcarousel-skin-ismRoundNavWide .jcarousel-clip-horizontal {
+    height: 100%;
+    margin: auto;
+    width: 95%;
+}
+
+.jcarousel-skin-ismRoundNavWide .jcarousel-list-horizontal {
+    height: 100%;
+}
+
+.jcarousel-skin-ismRoundNavWide .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 100%;
+    cursor: pointer;
+    -webkit-border-radius: 2px 0 0 2px;
+    -moz-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+    background: #b7bfc8 url(../../img/carousel-arrows.png) no-repeat 5px 45px;
+}
+
+.jcarousel-skin-ismRoundNavWide .jcarousel-next-horizontal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 100%;
+    cursor: pointer;
+    -webkit-border-radius: 0 2px 2px 0;
+    -moz-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    background: #b7bfc8 url(../../img/carousel-arrows.png) no-repeat -62px 45px;
+}
+
+/* scoreboard */
+#ism .ismDTpts {
+    margin: 0;
+    width: 40%;
+}
+
+#ism .ismDTShirt {
+    background: #82b1d3 url(../img/sb_gradient_slice.png) 0 0 repeat-x;
+    background-image: -moz-linear-gradient(top,#82b1d3,#9bc2de);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #82b1d3),color-stop(1,#9bc2de));
+    border: 1px solid #999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    height: 63px;
+    width: 48px;
+}
+
+#ism .ismDTPlayer {
+    border: none;
+    padding: 0;
+    margin: 0 0 5px;
+}
+
+#ism .ismDTText {
+    margin: 0;
+}
+
+#ism .ismDTPlayerPts {
+    font-size: 153.8%;
+    font-weight: bold;
+}
+
+#ism .ismDtTab {
+    padding: 0
+}
+
+#ism .ismDtPitch {
+    background: #dbdbdb url(../img/dt-pitch.png) no-repeat center bottom;
+    height: 480px;
+    padding-top: 20px;
+}
+
+/**
+* League standings
+*
+******/
+
+/* added after next points update table */
+.ism .ismAddManTable .ismCol1 {
+    width: 30%;
+}
+
+.ism .ismAddManTable .ismCol2 {
+    width: 70%;
+}
+
+.ism .ismAddManTable td {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* standings table */
+.ism .ismStandingsTable .ismCol1 {
+    width: 5%;
+}
+
+.ism .ismStandingsTable .ismCol2 {
+    width: 10%;
+}
+
+.ism .ismStandingsTable .ismCol3 {
+    width: 30%;
+}
+
+.ism .ismStandingsTable .ismCol4 {
+    width: 35%;
+}
+
+.ism .ismStandingsTable .ismCol5 {
+    width: 10%;
+}
+
+.ism .ismStandingsTable .ismCol6 {
+    width: 10%;
+}
+
+.ism .ismStandingsTable td {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/* head-to-head standings table */
+.ism .ismH2HStandingsTable .ismCol1 {
+    width: 5%;
+}
+
+.ism .ismH2HStandingsTable .ismCol2 {
+    width: 10%;
+}
+
+.ism .ismH2HStandingsTable .ismCol3 {
+    width: 36%;
+}
+
+.ism .ismH2HStandingsTable .ismCol4 {
+    width: 10%;
+}
+
+.ism .ismH2HStandingsTable .ismCol5 {
+    width: 10%;
+}
+
+.ism .ismH2HStandingsTable .ismCol6 {
+    width: 10%;
+}
+
+.ism .ismH2HStandingsTable .ismCol7 {
+    width: 12%;
+}
+
+.ism .ismH2HStandingsTable .ismCol8 {
+    width: 12%;
+}
+
+/* head-to-head matches */
+.ism .ismH2HMatchesTable .ismCol1 {
+    width: 5%;
+}
+
+.ism .ismH2HMatchesTable .ismCol2 {
+    width: 30%;
+}
+
+.ism .ismH2HMatchesTable .ismCol3 {
+    width: 20%;
+}
+
+.ism .ismH2HMatchesTable .ismCol4 {
+    width: 30%;
+}
+
+.ism .ismHome {
+    text-align: right;
+}
+
+.ism .ismFixRes {
+    text-align: center;
+}
+
+
+.ism .ismLeagueDetail .ui-tabs-panel {
+    padding: 0;
+}
+#ism .ismLeagueStandings {
+    position: relative;
+}
+.ism .ismPhaseFilterWrapper {
+    float: right;
+    margin: 9px 10px;
+    text-align: right;
+    width: 30%;
+}
+.ie7 #ism .ismPhaseFilterWrapper {
+    margin-bottom: 0;
+}
+#ism .ismPhaseFilterWrapper label {
+    color: #fff;
+    display: inline;
+    font-size: 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+.ism .ismPhaseFilterWrapper select,
+#ism .ismPhaseFilterWrapper select  {
+    font-size: 10px;
+    padding: 2px;
+}
+.ism .ismTable .ismLeagueMovers {
+    text-align: center;
+}
+.ism .ismSBTitle span {
+    font-weight: normal;
+}
+.ism .ui-widget {
+    font-family: Arial, helvetica, sans-serif;
+}
+
+.ism .ismAccordion {
+    position: relative;
+    margin-top: 20px;
+}
+.ism .ismAccordion .ui-accordion-header,
+#ism .ismAccordion .ui-accordion-header {
+    position: relative;
+    background: #639EC8;
+    border: 1px solid #DBE9F2;
+    color: #fff;
+    margin-bottom: 0;
+    padding: 0;
+    z-index: 1;
+}
+.ism .ismAccordion .ui-state-active,
+#ism .ismAccordion .ui-state-active {
+    background: #DBE9F2;
+    -webkit-box-shadow: 0 2px 2px #dedede;
+    -moz-box-shadow: 0 2px 2px #dedede;
+    box-shadow: 0 2px 2px #dedede;
+    z-index: 5;
+}
+.ie7 #body .ismAccordion .ui-state-active {
+    background: #DBE9F2 url(../img/drop-shadow-bottom.png) repeat-x left bottom;
+    border: 0px solid #fff;
+    margin: 10px 0 0;
+    padding-bottom: 5px;
+}
+
+#ism .ismAccordion .ui-state-default a,
+#ism .ismAccordion .ui-state-default a:link,
+#ism .ismAccordion .ui-state-default a:visited {
+    color: #fff;
+}
+.ism .ismAccordion .ui-state-active a,
+.ism .ismAccordion .ui-state-active a:link,
+.ism .ismAccordion .ui-state-active a:visited {
+    color: #639EC8;
+}
+.ism .ismAccordion .ui-state-default a:hover,
+.ism .ismAccordion .ui-state-active a:hover {
+    text-decoration: none;
+}
+.ism .ismAccordion .ui-state-active a:hover {
+    cursor: text;
+}
+.ism .ismAccordion .ui-widget-header .ui-state-active {
+    border: 1px solid #DBE9F2
+}
+.ism .ismAccordion .ui-widget-content,
+.ism .ismAccordion .ui-widget-header {
+    border: 1px solid #DBE9F2
+}
+#ism h4.ui-state-default,
+#ism .ismAccordion  .ui-accordion-content h4 {
+    background: none;
+    border: 0px solid #fff;
+    color: #639ec8;
+    margin: 5px 0;
+}
+#ism .ismAccordion h4 .ui-icon {
+    background: transparent;
+}
+#ism .ismAccordion h4.ui-state-default a,
+#ism .ismAccordion h4.ui-state-default a:link,
+#ism .ismAccordion h4.ui-state-default a:visited {
+    background: none;
+    border: 0px solid #fff;
+    color: #639ec8;
+}
+.ism .ismAccordion .ui-state-default .ui-icon,
+.ism .ismAccordion .ui-state-active .ui-icon {
+    background: url(../img/accordion-state.png) no-repeat 0 0;
+    margin-top: -6px;
+    width: 10px;
+    height: 10px;
+}
+.ism .ismAccordion .ui-state-active .ui-icon-triangle-1-s {
+    background-position: -10px 2px;
+}
+.ism .ismAccordion .ui-accordion-content {
+    z-index: 3;
+}
+.ism .ismLeagueDetail table:first-child {
+    margin-top: 10px;
+}
+
+/* League forum */
+.ism .ismForumTable .ismCol1 {
+    width: 25%;
+}
+
+.ism .ismForumTable .ismCol2 {
+    width: 20%;
+}
+
+.ism .ismForumTable .ismCol3 {
+    width: 10%;
+}
+
+.ism .ismForumTable .ismCol4 {
+    width: 35%;
+}
+
+.ism .ismForumTable .ismCol5 {
+    width: 10%;
+}
+
+/* tolltip table */
+.ism .ismTooltipTable {
+    font-size: 93%;
+    margin: 0;
+}
+
+/* h2h fixtures table */
+#ism .ismH2HFixTable {
+    border-top: none;
+    margin: 0 0 10px
+}
+#ism .ismH2HFixTable .ismCol1 { width: 43% }
+#ism .ismH2HFixTable .ismCol2 { width: 14% }
+#ism .ismH2HFixTable .ismCol3 { width: 43% }
+
+/* h2h matches table */
+#ism .ismMatchesTable .ismCol1 { width: 18% }
+#ism .ismMatchesTable .ismCol2 { width: 35% }
+#ism .ismMatchesTable .ismCol3 { width: 12% }
+#ism .ismMatchesTable .ismCol4 { width: 35% }
+
+/* ============= */
+/* = the scout = */
+/* ============= */
+
+#ism .ism3pLogo {
+    float: left;
+    margin-right: 15px;
+}
+
+#ism .ism3pTag {
+    clear: left;
+    float: left;
+    margin: 75px 5px 20px 5px;
+    vertical-align: middle;
+}
+
+#ism .ismArticleIntro {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+#ism .ismScoutTable {
+    margin: 0 0 20px;
+}
+
+#ism .ismScoutTable th,
+#ism .ismScoutTable td {
+    text-align: center;
+}
+#ism .ismScoutTable td:first-child {
+    text-align: left;
+}
+
+/* The new scout */
+.ism .ism-scout {
+    margin-right: 5px;
+}
+
+.ism .ism-scout__col--1 {
+    float: left;
+    width: 471px;
+}
+
+.ism .ism-scout__col--2 {
+    float: left;
+    width: 234px;
+}
+
+.ism .ism-scout__header {
+    height: 170px;
+    width: 705px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    background: url("/static/plfpl/img/scout-assets/scout-header.jpg") no-repeat;
+}
+
+.ism .ism-scout__headcol--1 {
+    float: left;
+    width: 383px;
+}
+
+.ism .ism-scout__headcol--2 {
+    float: left;
+    width: 322px;
+}
+
+.ism-scout__titles {
+    margin: 0 20px;
+}
+
+#ism .ism-scout__title {
+    line-height: 1;
+    margin: 35px 0 3px;
+    font-size: 36px;
+    color: #fff;
+}
+
+#ism .ism-scout__sub-title {
+    padding: 0;
+    border: none;
+    margin: 0;
+    font-size: 13px;
+    color: #b2b2b2;
+}
+
+#ism .ism-scout__logo {
+    display: inline-block;
+    width: 52px;
+    height: 31px;
+    vertical-align: middle;
+    background-image: url("/static/plfpl/img/scout-assets/scout-logo-light.png");
+}
+
+#ism .ism-scout__tab-bar {
+    margin: 35px 20px 0;
+}
+
+#ism .ism-scout__tab-bar > .ism-scout__tab {
+    top: 0;
+    margin-left: 0 0 0 2px;
+}
+
+#ism .ism-scout__tab-bar > .ism-scout__tab:first-child {
+    margin-left: 0;
+}
+
+#ism .ism-scout__tab-bar > .ui-state-default {
+    min-width: 112px;
+    border: none !important; /* necessary evil to override old jQuery UI CSS */
+    background: #639ec8;
+}
+
+#ism .ism-scout__tab-bar > .ui-state-default > a {
+    display: block;
+    float: none;
+    line-height: 1;
+    padding: 9px 0;
+    text-align: center;
+    color: #fff;
+}
+
+#ism .ism-scout__tab-bar > .ui-state-active {
+    background: #c8dceb;
+}
+
+#ism .ism-scout__tab-bar > .ui-state-active > a {
+    color: #000;
+}
+
+.ism .ism-scout__content {
+    padding-right: 20px;
+}
+
+#ism .ism-scout__heading {
+    padding-bottom: 10px;
+    margin-top: 0px;
+    border-bottom: 1px dotted #666;
+    font-size: 16px;
+}
+
+.ism .ism-scout__img-list > li {
+    margin-bottom: 10px;
+}
+
+.ism .ism-scout__img-list > li > img {
+    display: block;
+}
+
+#ism .ism-scout__button {
+    margin: 10px 0 25px;
+    font-size: 13px;
+    background: #df0034;
+}
+
+#ism .ism-scout__button > .ui-button-text {
+    padding: 4px 10px;
+}
+
+.ism .ism-scout__case {
+    overflow: auto;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    background-color: #edf5fa;
+}
+
+.ism .ism-scout__case__content {
+    margin: 0 20px;
+}
+
+#ism .ism-scout__case__heading {
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+/* REMOVE THIS ONCE WE HAVE A CASE */
+#ism .ism-scout__double-break {
+    margin-bottom: 30px;
+}
+
+#ism .ism-scout__question {
+    margin-bottom: 20px;
+}
+
+#ism .ism-scout__case__copy {
+    margin-bottom: 0;
+}
+
+#ism .ism-scout__answer {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.ism .ism-scout__case__links {
+    margin: 27px 20px 0 0;
+}
+
+.ism .ism-scout__case__thumb {
+    position: relative;
+    display: inline-block;
+}
+
+.ism .ism-scout__case__img {
+    padding: 10px;
+    background-color: #dbdbdb;
+}
+
+.ism-scout__case__fig {
+    margin-bottom: 10px;
+}
+
+.ism .ism-icon--zoom {
+    position: absolute;
+    top: 115px;
+    left: 87px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url("/static/plfpl/img/icons/zoom.png");
+}
+
+.ism .ism-scout__link-list > li {
+    float: left;
+    padding: 15px 14px;
+}
+
+.ism .ism-scout__link-list > li:first-child {
+    padding-right: 0;
+}
+
+#ism .ism-scout__link {
+    font-size: 12px;
+}
+
+.ism .ism-appt {
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.ism .ism-appt__label {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.ism .ism-appt__info {
+    font-weight: bold;
+}
+
+.ism .ism-appt__input {
+    width: 97%;
+}
+
+.ism .ism-appt__textarea {
+    height: 150px;
+}
+
+/* Social */
+.ism .ismFBLink {
+   background: #eceef5;
+   border: 1px solid #cad4e7;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+   float: left;
+   margin-right: 5px;
+   padding: 2px 4px;
+   text-decoration: none;
+}
+
+.ism .ismFBLink:hover {
+   border-color: #9dacce;
+}
+
+.ism .ismLikeText {
+   background: url(https://s-static.ak.facebook.com/rsrc.php/v1/y7/r/ql9vukDCc4R.png) no-repeat left -47px;
+   color: #3b5998;
+   font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+   font-size: 11px;
+   line-height: 14px;
+   margin-left: -1px;
+   padding-left: 17px;
+   display: block;
+}
+
+/* ======= */
+/* = TAC = */
+/* ======= */
+/* Is this needed?? It's also set on line 1629 */
+.ism .ui-dialog-content {
+    overflow: auto;
+    padding-bottom: 1.5em;
+}
+
+/* ================ */
+/* = Extra stlyes = */
+/* ================ */
+
+/* Profile */
+#ism .ismProfileSection {
+    margin: 0 0 25px;
+}
+
+/* printable list*/
+.ism .ismElementList {
+    background: #fff;
+    padding: 20px;
+}
+
+.ism .ismPrintTable {
+    margin: 0 10px 0 0;
+    width: 97%;
+}
+
+.ism .ismPrintTable .ismCol1 {
+    width: 35%;
+}
+
+.ism .ismPrintTable .ismCol2 {
+    width: 35%;
+}
+
+.ism .ismPrintTable .ismCol3 {
+    width: 15%;
+}
+
+.ism .ismPrintTable .ismCol4 {
+    width: 15%;
+}
+
+.ism .ismLastPrintTable {
+    margin: 0 0 0 10px;
+}
+
+
+/* notes */
+#ismNotes {
+    display: none;
+    font-size: 12px;
+}
+
+#ismNotes .ismNotesTextArea {
+    height: 300px;
+    width: 98%;
+}
+.ismNotesLink {
+    margin-bottom: 10px;
+}
+.ismNotesLink a {
+    color: #050528;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.ismNotesLink a:hover {
+    text-decoration: underline;
+}
+.ismNotesLink:before {
+    color: #679db9;
+    content: '» ';
+}
+
+/* end of season scout */
+.ism .ism-part-2 {
+    display: none;
+}
+
+/* Coming soon */
+#ism .ismComingSoon {
+    text-align: center;
+}
+#ism .ismComingSoonBanner {
+    background: url(../img/comingsoon-bg.png) 0 0;
+    height: 170px;
+}
+#ism .ismComingSoonBanner h2 {
+    font-size: 32px;
+    border: none;
+    padding: 50px 0 8px 0;
+    margin: 0;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: 'PremierLeagueRegular','Lucida Grande','Lucida Sans Unicode';
+}
+#ism .ismComingSoonBanner h3 {
+    font-size: 24px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: 'PremierLeagueRegular','Lucida Grande','Lucida Sans Unicode';
+}
+#ism .ismComingSoonContent {
+    background: url(../img/comingsoon-pitch-bg.png) 0 0;
+    height: 416px;
+    padding-top: 50px;
+}
+#ism .ismComingSoonStatus {
+    color: #050528;
+    font-weight: normal;
+    text-align: left;
+    padding: 0 55px;
+}
+#ism .ismComingSoonTwitter {
+    padding: 50px 0 0 140px;
+    font-size: 18px;
+    position: relative;
+}
+#ism .ismComingSoonTwitter a {
+    font-size: 18px;
+}
+#ism .ismTwitterImage {
+    position: absolute;
+    top: 35px;
+    left: 135px;
+}
+#ism .ismComingSoonPlayerList {
+    padding: 45px 100px 0 0;
+    font-size: 18px;
+}
+
+/* event status table */
+#ism .ismEventStatus .ismLeagueTables {
+    background-color: #fff;
+}
+#ism .ismEventStatus .ismTooltipHeader {
+    float: right;
+}
+#ism .ismEventStatus th:nth-child(n+2) {
+    text-align: center;
+}
+#ism .ismEventStatus td:nth-child(n+2) {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#ism .ismEventStatus .ismInProgress {
+    color: #666;
+}
+#ism .ismEventStatus .ismFinished {
+    color: #189245;
+}
+#ism .ismEventStatus tfoot td {
+    border-top: 3px solid #DBE9F2;
+}
+
+/* event info grid */
+#ism .ismEventInfo p  {
+    color: #fff;
+    font-weight: normal;
+    font-family: 'PremierLeagueRegular','Lucida Grande','Lucida Sans Unicode';
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+}
+#ism .ismEventInfoList {
+    margin-top: 10px;
+}
+#ism .ismEventInfoList a {
+    color: #fff;
+    font-weight: bold;
+}
+#ism .ismEventInfo p.ismLarge {
+    font-size: 18px;
+}
+#ism .ismEventInfo p.ismMegaLarge {
+    font-size: 30px;
+}
+#ism .ismEventInfoPrimary {
+    height: 116px;
+    padding: 10px;
+    background: #4e4e66; /* Old browsers */
+    background: -moz-linear-gradient(top, #4e4e66 0%, #181838 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4e4e66), color-stop(100%,#181838)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #4e4e66 0%,#181838 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #4e4e66 0%,#181838 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #4e4e66 0%,#181838 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4e66', endColorstr='#181838',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #4e4e66 0%,#181838 100%); /* W3C */
+}
+#ism .ismEventInfoSecondary {
+    height: 68px;
+}
+#ism .ismEventInfoHp {
+    background-color: #00a4e8;
+    padding: 5px;
+    height: 58px;
+}
+#ism .ismEventInfoTm {
+    background-color: #19adea;
+    padding: 5px;
+    height: 58px;
+}
+#ism .ismEventInfoWp {
+    background-color: #639ec8;
+    padding: 5px;
+    height: 58px;
+}
+#ism .ismEventInfoAp {
+    background-color: #4cbfef;
+    padding: 5px;
+    height: 58px;
+}
+#ism .ismEventInfoMc {
+    background-color: #91bbd8;
+    padding: 5px;
+    height: 58px;
+}
+#ism .ismEventInfoMv {
+    background-color: #b1cee3;
+    padding: 5px;
+    height: 58px;
+}
+
+/* Event Info module - 2013 */
+.ism .ism-event-info {
+    position: relative;
+    min-height: 170px;
+    padding: 18px 342px 18px 20px;
+    background: url("../img/event-info-bg.png") no-repeat;
+}
+
+.ism .ism-event-info__headings {
+    float: left;
+    width: 214px;
+}
+
+#ism .ism-event-info__heading {
+    padding-bottom: 5px;
+    border-bottom: none;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: normal;
+    color: #fff;
+}
+
+#ism .ism-event-info__sub-heading {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: normal;
+    color: #fff;
+}
+
+.ism .ism-event-info__links {
+    float: left;
+    width: 134px;
+}
+
+.ism .ism-event-info__list {
+    padding-top: 36px;
+}
+
+.ism .ism-event-info__list > li {
+    padding-left: 10px;
+}
+
+.ism .ism-event-info__list > li:first-child {
+    padding-left: 0;
+}
+
+#ism .ism-event-info__list > li > a {
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+}
+
+#ism .ism-event-info__list .ism-icon--more {
+    font-size: 14px;
+    color: #639ec8;
+}
+
+#ism .ism-panel-list {
+    margin: 16px 0 3px;
+}
+
+.ism .ism-panel-list > li {
+    width: 150px;
+    padding: 7px 10px;
+    margin: 0 1px 1px 0;
+    line-height: 1;
+    color: #050528;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.ism .ism-panel-list > .ism-panel-list__primary-item {
+    color: #fff;
+    background-color: #26a9eb;
+    background-color: rgba(38, 169, 235, 0.8);
+}
+
+.ism .ism-panel-item__value {
+    font-size: 24px;
+}
+
+.ism .ism-panel-item__heading {
+    font-size: 12px;
+}
+
+.ism .ism-event-info__video {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* status message */
+#ism .ismStatus {
+    padding: 10px 20px 5px 40px;
+}
+#ism .ismStatus h2 {
+    border: none;
+    font-size: 16px;
+    padding: 0;
+}
+#ism .ismStatus p, #ism .ismStatus ul {
+    font-size: 11px;
+    color: #000;
+}
+#ism .ismStatusYes {
+    background: #fae4e7 url(../img/status_yes.png) no-repeat 10px 15px;
+}
+#ism .ismStatusYes h2 {
+    color: #e00037
+}
+#ism .ismStatusNo {
+    background: #d8ecbe url(../img/status_no.png) no-repeat 10px 15px;
+
+}
+#ism .ismStatusNo h2 {
+    color: green;
+}
+#ism .ismStatusList li {
+    margin-bottom: 10px;
+}
+
+#ism .ismStatusUpdated {
+    font-style: italic;
+}
+
+/* home margins */
+#ism .ismHomeMarginTop {
+    margin-top: 20px;
+}
+#ism .ismHomeMarginLeft {
+    margin-left: 10px;
+}
+#ism .ismHomeMarginRight {
+    margin-right: 10px;
+}
+
+/* home blocks */
+#ism .ismHomeBlock table{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#ism .ismHomeBlock thead a {
+    color: #639EC8;
+}
+
+/* Latest injuries and bans */
+#ism .ismLatestNewsKey {
+    font-size: 11px;
+}
+#ism .ismLatestNewsKey .ismLatestHeader {
+    margin-right: 2px;
+    color: #639EC8;
+    font-weight: bold;
+}
+#ism .ismLatestNewsKey .ismLatestLabel {
+    margin-right: 2px;
+}
+#ism .ismLatestNewsKey img {
+    margin: 0 1px;
+}
+/* Stats list */
+#ism .ismStatsList {
+    margin-top: 10px;
+}
+
+/* App Promo */
+#ism .ismAppPromo {
+    background-image: url(../img/apad/app-promo.png);
+    height: 127px;
+    width: 710px;
+    position: relative;
+}
+#ism .ismAppLabel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+}
+#ism .ismAppText {
+    position: absolute;
+    left: 110px;
+    top: 20px;
+    width: 160px;
+    color: #fff;
+    font-size: 18px;
+}
+#ism .ismAppButton {
+    position: absolute;
+    left: 110px;
+    top: 70px;
+}
+#ism .ismAppPromo .ismAppThumbs {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+#ism .ismAppPromo .ismAppThumbs img {
+    cursor: pointer;
+}
+#ism .ismAppPromo .ismAppDialog {
+    display: none;
+}
+.ism .ismAppPrev {
+    margin-right: 5px;
+    float: right;
+}
+.ism .ismAppNext {
+    margin-left: 5px;
+}
+
+/* ================== */
+/* = fouc avoidance = */
+/* ================== */
+.js .jcarousel-skin-ism,
+.js .ismTabsList,
+.js .ismTabs {
+    visibility: hidden;
+}
+
+/* We should be able to get rid of some of these old utils classes soon */
+/* =================== */
+/* = utility classes = */
+/* =================== */
+
+#ism .ismHide {
+    display: none;
+}
+
+#ism .ismHideContent {
+    display: inline-block;
+    height: 0;
+    padding: 0;
+    text-indent: -9999em;
+}
+
+#ism .ismFloatLeft {
+    float: left;
+}
+
+.ism .ismFloatRight {
+    float: right;
+}
+
+#ism .ismTestIndex {
+    position: relative;
+    background: red;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+
+/* =============================================================================
+   Modules
+   ========================================================================== */
+
+/* Links
+   ========================================================================== */
+
+#ism .ism-link-page,
+.ism .ism-link-page {
+    padding: 5px 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #050528;
+}
+
+.ism .ism-link-page--left {
+    float: left;
+}
+
+.ism .ism-link-page--right {
+    float: right;
+}
+
+#ism .ism-icon-page,
+.ism .ism-icon-page {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    vertical-align: middle;
+}
+
+#ism .ism-icon-page---more,
+.ism .ism-icon-page---more {
+    background-image: url(../img/icons/more.png);
+    margin-left: 3px;
+}
+
+#ism .ism-icon-page---less,
+.ism .ism-icon-page---less {
+    background-image: url(../img/icons/less.png);
+    margin-right: 3px;
+}
+
+/* New style more link */
+#ism .ism-more-link,
+.ism .ism-more-link {
+    font-weight: bold;
+    color: #639ec8;
+    /* get rid of this when we move to abstract font sizing */
+    font-size: 12px;
+}
+
+/* icon for more link - because :before inherits underline */
+.ism .ism-more-icon {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 3px;
+    vertical-align: middle;
+    background-image: url(../img/icons/more.png);
+}
+
+/* Panels
+   ========================================================================== */
+
+/* Basic panel */
+.ism .ism-panel {
+    border: 3px solid #dbe9f2;
+}
+
+/* Basic panel heading */
+
+/* We have to add this stupid ID selector now becuase it's on everything else */
+#ism .ism-panel-h,
+.ism .ism-panel-h {
+    /* We SHOULD only have to set these property values... */
+    padding: 5px 10px;
+    color: #639ec8;
+    background-color: #dbe9f2;
+    /* ...but unfortunately we also need these to reset the h2 type selector */
+    border: none;
+    margin: 0;
+    background: #dbe9f2;
+    font-size: inherit;
+}
+
+.ism .ism-panel-foot {
+    padding: 5px 10px;
+    border-top: 1px solid #dbe9f2;
+}
+
+/* Basic panel data list */
+.ism .ism-panel-data-list li {
+    border-top: 1px solid #dbe9f2;
+}
+
+/* Basic panel data item */
+.ism .ism-panel-data-item {
+    width: 30%;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+/* Basic panel data item heading */
+.ism .ism-panel-item-h {
+    width: 48%;
+    border-right: 1px solid #dbe9f2;
+    font-weight: normal;
+}
+
+.ism .ism-panel-table {
+    border: none;
+}
+
+/* Promo */
+.ism .ism-promo-banner {
+    display: inline-block;
+    width: 710px;
+    height: 180px;
+    margin-top: 20px;
+    background-image: url("../img/promo-banner.jpg");
+}
+
+/* Promo panel
+   ========================================================================== */
+
+.ism .ism-thumbnail {
+    display: block;
+    width: 200px;
+    height: 136px;
+    margin: auto;
+}
+
+
+.ism .ism-promo-panel-out .ism-thumbnail {
+    width: 123px;
+    height: 84px;
+}
+
+.ism .ism-promo-panel-out .ism-home-panel-text {
+    width: 186px;
+}
+
+/* Match Centre Promos
+   ========================================================================== */
+
+
+.ism .ism-lmc-promo-narrow {
+    display: block;
+    width: 490px;
+    height: 37px;
+    margin-bottom: 20px;
+    background-image: url("../img/lmc-narrow.png");
+
+}
+
+.ism .ism-lmc-promo-wide {
+    display: block;
+    width: 710px;
+    height: 37px;
+    margin-bottom: 20px;
+    background-image: url("../img/lmc-wide.png");
+}
+
+.ism .ism-lmc-promo-sidebar {
+    display: block;
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+    background-image: url("../img/lmc-sidebar.jpg");
+}
+
+/* =============================================================================
+   JS Widgets (dialogs, carousels etc.)
+   ========================================================================== */
+
+/* jCarousel cruft - https://github.com/jsor/jcarousel
+   ========================================================================== */
+
+.ism .jcarousel-skin-elements {
+    position: relative;
+    overflow: hidden;
+    width: 455px;
+    margin: 1px;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-clip {
+    width: 419px;
+    margin: auto;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-list {
+    width: 20000em;
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-item {
+    float: left;
+    width: 90px;
+    min-height: 120px;
+    background-color: #189245;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-item:nth-child(even) {
+    background-color: #35a649;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-prev,
+.ism .jcarousel-skin-elements .jcarousel-next {
+    position: absolute;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    background: #b7bfc8 url(../img/carousel-arrows.png) no-repeat;
+    cursor: pointer;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-prev {
+    left: 0;
+    background-position: 5px 52px;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-next {
+    right: 0;
+    background-position: -62px 52px;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-prev:hover {
+    background-position: 5px -97px;
+}
+
+.ism .jcarousel-skin-elements .jcarousel-next:hover {
+    background-position: -62px -97px;
+}
+
+.ism .ism-carousel-shirt {
+    display: block;
+    width: 47px;
+    height: 62px;
+    margin: 5px auto;
+}
+
+#ism .ismTopElementData {
+    padding-bottom: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+/* =============================================================================
+   Utils
+   ========================================================================== */
+
+/*
+ * Helper classes for margins and padding.
+ * Used to maintain consistent grid rhythm
+ * https://speakerdeck.com/u/andyhume/p/css-for-grown-ups-maturing-best-practises?slide=69
+ */
+
+.ism .ism-margin-top { margin-top: 10px }
+.ism .ism-margin-bottom { margin-bottom: 10px }
+.ism .ism-gutter-left { padding-left: 10px }
+.ism .ism-gutter-right { padding-right: 10px }
+
+.ism .ism-margin-top-lrg { margin-top: 20px }
+.ism .ism-margin-bottom-lrg { margin-bottom: 20px }
+.ism .ism-gutter-left-lrg { padding-left: 20px }
+.ism .ism-gutter-right-lrg { padding-right: 20px }
+
+/* Helper classes for centering stuff. */
+
+/* center element */
+.ism .ism-center-el { margin: auto; }
+
+/* text alignment */
+.ism .ism-al-center { text-align: center; }
+.ism .ism-al-right { text-align: right; }
+.ism .ism-al-left { text-align: left; }
+
+/* text treatment */
+.ism .ism-strong { font-weight: bold; }
+.ism .ism-upper { text-transform: uppercase; }
+
+/* Float helpers */
+.ism .ism-float-left { float: left; }
+.ism .ism-float-right { float: right; }
+
+/* Premier League blue gradient */
+.ism-pl-grad {
+    background: #4e4e66; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRlNGU2NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE5JSIgc3RvcC1jb2xvcj0iIzQ3NDc2MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc2JSIgc3RvcC1jb2xvcj0iIzIzMjM0MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxODE4MzgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #4e4e66 0%, #474760 19%, #232341 76%, #181838 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4e4e66), color-stop(19%,#474760), color-stop(76%,#232341), color-stop(100%,#181838)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #4e4e66 0%,#474760 19%,#232341 76%,#181838 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #4e4e66 0%,#474760 19%,#232341 76%,#181838 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #4e4e66 0%,#474760 19%,#232341 76%,#181838 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #4e4e66 0%,#474760 19%,#232341 76%,#181838 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e4e66', endColorstr='#181838',GradientType=0 ); /* IE6-8 */
+}
+
+/**
+ * Non-semantic helper classes: please define your styles before this section.
+ */
+
+/* For image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+/* To wrap text where no natural world break */
+.ismWrapText {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for webkit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+/**
+ * Media queries for responsive design.
+ *
+ * These follow after primary styles so they will successfully override.
+ */
+
+@media all and (orientation:portrait) {
+  /* Style adjustments for portrait mode goes here */
+
+}
+
+@media all and (orientation:landscape) {
+  /* Style adjustments for landscape mode goes here */
+
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
+   consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+
+
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
+  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+/**
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}

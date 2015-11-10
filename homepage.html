@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Test Page</title>
+<script>
+function showPlayers(position)
+{
+	if (position == "")
+	{
+		document.getElementById("Players").innerHTML = "";
+	}
+	else
+	{
+		if (window.XMLHttpRequest)
+		{
+			xmlhttp = new XMLHttpRequest();
+		}
+		else
+		{
+			xmlhttp = new ActiveXObject ("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function ()
+		{
+			window.alert(xmlhttp.status+" "+xmlhttp.readyState);
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+			{
+				window.alert("I'm inside");
+				document.getElementById("Players").innerHTML = xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open ("GET","http://localhost/test.php?q="+position,true);
+		xmlhttp.send();
+	}
+}
+</script>
+</head>
+<body>
+<h1>Welcome </h1>
+
+<select name="Position" onchange="showPlayers(this.value)">
+	<option value = ""> Choose postion </option>
+	<option value = "Striker"> Strikers </option>
+	<option value = "MidField"> Mid Fielders </option>
+	<option value = "Defenders"> Defenders </option>
+	<option value = "Keeper"> Keepers </option>
+</select>
+
+<div id="Players">Resulsts here</div>
+
+
+</body>
+
+</html>

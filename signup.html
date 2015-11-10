@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Play Fantasy Football For Free - Fantasy Football</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link href="global-647cd5e13b0ce4027ac2afe2eb203ab2.css" type="text/css" rel="stylesheet" />
+      <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+      <script>
+
+               function checkAvailability() {
+         $("#loaderIcon").show();
+         jQuery.ajax({
+         url: "check_availability.php",
+         data:'username='+$("#username").val(),
+         type: "POST",
+         success:function(data){
+         $("#user-availability-status").html(data);
+         $("#loaderIcon").hide();
+         },
+         error:function (){}
+         });
+         }
+         function checkPassword()
+         {
+            if(document.getElementById("password").value!=document.getElementById("passwordAgain").value)
+            {
+              alert('PASSWORDS DONT MATCH! O.o');
+            }
+         }
+                                          
+      </script> 
+   </head>
+   <body class="with-top-bar long-brand nfl with-tabs">
+      <nav class="navbar navbar-default" role="navigation">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-toggleable"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+         </div>
+         <div id="nav-toggleable" class="collapse navbar-collapse">
+            <div class="navbar-right">
+               <div class="navbar-right"><a class="btn btn-default navbar-btn" id="ICAFDQO" href="login_new.html"><strong>Log In</strong></a></div>
+            </div>
+         </div>
+      </nav>
+      <div id="body">
+         <div id="top-bar-container">
+            <div id="top-bar">
+               <ul class="breadcrumb pull-left">
+                  <li><a href="/nfl">Home</a>
+                  <li class="active">Play Fantasy Football For Free</li>
+               </ul>
+            </div>
+         </div>
+         <div class="container-fluid">
+            <div id="alerts-container"></div>
+            <div class="row">
+               <div id="body-main" class="col-md-6 col-md-offset-3 col-xs-12">
+                  <div id="main-container">
+                     <ul class="nav nav-pills">
+                        <li id="ICAFDQO"><a href="login_new.html">Log In</a></li>
+                        <li class="active" id="24N6R98"><a href="signup.html">Create New Account</a></li>
+                     </ul>
+                     <div id="body-center-main">
+                        <form action="signup.php" method="post"  class="form-vertical">
+                           <input type="hidden" id="forwardTo" name="forwardTo" value="" />
+                           <div class="panel panel-default">
+                              <div class="panel-body">
+                                 <div class="hidden-xs" id="signup-image"></div>
+                                 <fieldset>
+                                    <div class="form-group with-help">
+                                       <label for="email" class="control-label ">User Name</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>Your User Name address.
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6">
+                                          <input type="text" name="username" id="username" class="form-control" onBlur="checkAvailability()" required /><span id="user-availability-status"></span> 
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label for="password" class="control-label ">Password</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>Longer passwords are more secure.</p>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6"><input type="password" name="password" id="password" class="form-control" required /></div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label for="passwordAgain" class="control-label ">Re-Type Password</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>To prevent typos.</p>
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6"><input type="password" name="passwordAgain" id="passwordAgain" class="form-control" 
+                                          onfocusout="checkPassword()" required/>
+                                          
+
+                                          
+                                          
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label for="userName" class="control-label ">Display Name</label>
+                                       
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6"><input type="text" name="displayName" id="displayName" class="form-control" required /></div>
+                                       </div>
+                                    </div>
+                                    <div class="form-group with-help">
+                                       <label for="League" class="control-label ">League</label>
+                                       <p class="popover right help-block"><span class="arrow"></span>Choose Your League.
+                                       <div class="form-controls row">
+                                          <div class="col-sm-6">
+                                          <select id="LeagueSelect" name="lidSelected" required>
+                                             <option value="">Select League</option>
+                                             <option value=394>Bundesliga</option>
+                                             <option value=396>Ligue</option>
+                                             <option value=398>Premier League</option>
+                                             <option value=399>Primera Dividion</option>
+                                             <option value=400>Segunda Division</option>
+                                             <option value=401>Serie A</option>
+                                             <option value=402>Primeira Liga</option>
+                                             <option value=404>Eridvisie</option>
+                                          </select></div>
+                                       </div>
+                                    </div>
+                                 </fieldset>
+                              </div>
+                              <div class="form-actions panel-footer">
+                                 <input name="signup" type="submit" value="Start Playing!" class="btn btn-success"><a class="btn btn-link" href="login_new.html">
+                                 Already a member? Sign in</a>
+                                 
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container-fluid">
+
+         </div>
+      </div>
+      <script type="text/javascript" src="http://d1h60c43tcq0zx.cloudfront.net/static/js/versioned/global-1276ccf54e109d4bbcb7c66a52d16778.js"></script>
+   </body>
+</html>
+<!--response=0:00:00.002; action=0:00:00.001; render=0:00:00.001; host=ip-172-30-4-253; version=15.3.60; build=2015-10-27 16:36-->
+
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=710829082377875&amp;ev=PixelInitialized" /></noscript>
+</div></div></div></div></div></div>
+<div class="container-fluid">
+
+   </div>
+</div>
+<script type="text/javascript" src="http://d1h60c43tcq0zx.cloudfront.net/static/js/versioned/global-1276ccf54e109d4bbcb7c66a52d16778.js"></script><script type="text/javascript" src="http://d1h60c43tcq0zx.cloudfront.net/static/js/versioned/carousel-4f34ee68d3aeb3e868adcac6f2b4a0e3.js"></script><script type="text/javascript" id="inline-scripts">$("#screenshots-carousel").carousel({interval:3E3}).carousel("cycle");</script></body></html>

@@ -1,0 +1,20 @@
+
+var pubId=57252;
+var siteId=60991;
+var kadId=127586;
+var kadwidth=120;
+var kadheight=600;
+var kadtype=1;
+var kadpubclkurl = 'http://adserver.adtech.de/adlink|327|4806559|0|168|AdId=11144535;BnId=3;itime=224966133;nodecode=yes;link=';
+var kadpageurl = '';
+
+document.write("<scr"+"ipt type=\"text/javascript\" src=\"http://ads.pubmatic.com/AdServer/js/showad.js\"></scr"+"ipt>\n");
+
+var adcount_4806559_1_=new Image();
+adcount_4806559_1_.src="http://adserver.adtech.de/adcount|2.0|327|4806559|0|168|AdId=11144535;BnId=3;ct=2103986770;st=3202;adcid=1;itime=224966133;reqtype=5;";
+
+var websiteids1127582 = [1029344,1134093,1047955,1144067,1124211,1116407,1168524,1168525,1145681,1169120,1103329,1117473,1103441,1105590,1168785,1134347,1147152];
+var found1127582 = websiteids1127582.indexOf(1127582); 
+if (found1127582 > -1 ) {
+document.write('<scr'+'ipt language="javas'+'cript" type="text/javascript" src="//js.revsci.net/gateway/gw.js?csid=F09828&auto=t&bpid=performgroup"></scr'+'ipt>');
+}document.write("<scr"+"ipt src=\""+(window.location.protocol=='https:' ? "https://aka-cdn.adtechus.com" : "http://aka-cdn-ns.adtechus.com")+"/media/moat/adtechbrands092348fjlsmdhlwsl239fh3df/moatad.js#moatClientLevel1=327&moatClientLevel2=1127582&moatClientLevel3=0&moatClientLevel4=4806559&zMoatMaster=11145015&zMoatFlight=11144535&zMoatBanner=108597284&zURL=http&zMoatPlacementId=4806559&zMoatAdId=11144535&zMoatCreative=0&zMoatBannerID=3&zMoatCustomVisp=50&zMoatCustomVist=1000&zMoatIsAdvisGoal=0&zMoatEventUrl=http://adserver.adtech.de/adcount|2.0|327|4806559|0|168|AdId=11144535;BnId=3;ct=2103986770;st=3218;adcid=1;itime=224966133;reqtype=5;&zMoatSize=168&zMoatSubNetID=0&zMoatisSelected=1&zMoatadServer=adserver.adtech.de&zMoatadVisServer=&zMoatSamplingRate=23&zMoatliveTestCookie=&zMoatRefSeqId=rwiARADAHAA\" type=\"text/javascript\"></scr"+"ipt>");
